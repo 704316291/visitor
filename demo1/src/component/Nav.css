@@ -1,0 +1,178 @@
+
+.navDiv {
+    width: 100%;
+    z-index: 999;
+    padding: 0 30px;
+    height: 83px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 8px 0 rgba(194, 194, 194, 0.26);
+}
+
+.navLogo {
+    float: left;
+    margin-top: 25px;
+    height: 30px;
+    display: inline-block;
+    width: 170px;
+    background: url("../static/images/logoX.png") no-repeat;
+    background-size: cover;
+}
+
+.navLogoX {
+    float: left;
+    display: inline-block;
+    margin-top: 25px;
+    height: 30px;
+    width: 170px;
+    background: url("../static/images/logoX.png") no-repeat;
+}
+
+.navDiv-fixed {
+    background-color: rgba(255, 255, 255, .95);
+    color: #333;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, .1);
+}
+
+.navDiv .navLogoX, .navDiv-fixed .navLogo {
+    display: none;
+}
+
+.navDiv-fixed .navLogoX {
+    display: block;
+}
+
+.nav-ul {
+    float: right;
+    display: block;
+    padding-top: 32px;
+    margin-left: 40px;
+}
+
+.nav-ul li {
+    float: left;
+    display: block;
+    border-left: 1px solid #333;
+    line-height: 1em;
+    padding: 0 20px;
+    position: relative;
+}
+
+.nav-ul li:first-child {
+    border-left: 0;
+}
+
+.nav-ul li:nth-last-child(1) {
+    border-left: 0;
+}
+
+.nav-ul li a {
+    color: #000;
+    font-size: 16px;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+
+.icon-languageE {
+    width: 24px;
+    height: 24px;
+    color: #999999;
+    border-radius: 50%;
+    border: 1px solid #dddddd;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.icon-languageZ {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    color: #999999;
+    border-radius: 50%;
+    font-size: 12px;
+    border: 1px solid #dddddd;
+    margin-bottom: 10px;
+}
+
+.nav-ul li.active a::after,
+.nav-ul li a:hover::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    left: 50%;
+    margin-left: -10px;
+    bottom: -10px;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.navDiv-fixed .nav-ul li.active a::after,
+.navDiv-fixed .nav-ul li a:hover::after {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.navDiv-fixed .nav-ul li {
+    border-color: #ccc;
+}
+
+.navDiv-fixed .nav-ul li a {
+    color: #333;
+}
+
+.nav-login li {
+    padding: 0 10px;
+}
+
+.nav-login li:last-child {
+    border-left: 0;
+}
+
+.navDiv-fixed .nav-login li a {
+    color: #999;
+}
+
+.nav-login li i {
+    font-size: 24px;
+    position: relative;
+    top: -4px;
+}
+
+.indexUs, .indexDade {
+    width: 50%;
+    float: left;
+    display: block;
+    padding-right: 90px;
+}
+
+.indexUs h4 {
+    font-size: 36px;
+    position: relative;
+    padding-bottom: 30px;
+    font-weight: 200;
+}
+
+.indexUs h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 50px;
+    background-color: #0094E6;
+}
+
+.indexUs p {
+    margin: 20px 0 30px;
+    font-size: 14px;
+    line-height: 2em;
+    color: #666;
+}
+
+.indexUs a {
+    width: 130px;
+    display: block;
+}

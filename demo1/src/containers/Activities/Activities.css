@@ -1,0 +1,461 @@
+
+.steps-content {
+    margin-top: 16px;
+    border: 1px dashed #e9e9e9;
+    border-radius: 6px;
+    background-color: #fafafa;
+    min-height: 300px;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.steps-action {
+    margin-top: 24px;
+}
+
+.ant-steps-item-icon {
+
+}
+
+.ant-steps-item-icon {
+    background: rgba(60, 190, 180, 1) !important
+}
+
+.insideDiv {
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.insideDiv {
+    padding-top: 180px;
+}
+
+.timeLine {
+    width: 100%;
+    margin: 10px auto;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+.timeLine li {
+    width: 25%;
+    float: left;
+    display: block;
+    text-align: center;
+    color: #3cbeb4;
+    position: relative;
+}
+
+.timeLine li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #3cbeb4;
+    top: 23px;
+    z-index: 1;
+}
+
+.timeLine li::after {
+    content: ">>";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: block;
+    right: 0;
+    margin-right: -15px;
+    z-index: 100;
+    top: 10px;
+    text-align: center;
+    line-height: 30px;
+    font-family: Arial;
+}
+
+.timeLine li:last-child::after {
+    content: "";
+    display: none;
+}
+
+.timeLine li p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-top: 14px;
+}
+
+.timeLine li i {
+    font-style: normal;
+    width: 42px;
+    height: 42px;
+    display: block;
+    border: 2px solid #3cbeb4;
+    line-height: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #3cbeb4;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    background-color: #fff;
+}
+
+.timeLine li i::after {
+    font-style: normal;
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: -10px;
+    right: -10px;
+    top: 23px;
+    display: block;
+    background-color: #fff;
+    z-index: -1;
+}
+
+.timeLine li.active i {
+    font-style: normal;
+    background-color: #3cbeb4;
+    color: #fff;
+}
+
+.timeLine li.active i::after {
+    font-style: normal;
+    content: "";
+    display: none;
+
+}
+
+/* Apply-内容 */
+
+.applyDl {
+    width: 100%;
+    margin: 90px auto 20px;
+    overflow: hidden;
+    font-weight: 200;
+}
+
+.applyDl dt {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.applyDl dd {
+    font-size: 14px;
+    color: #999;
+}
+
+.applyTitle {
+    width: 100%;
+    margin: 36px auto;
+    overflow: hidden;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 18px;
+    color: #0094E6;
+}
+
+.applyForm {
+    width: 80%;
+    display: block;
+    margin: 20px 0;
+    float: left
+
+}
+
+.applyForm li {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    float: left;
+}
+
+.applyForm li .layui-form-label {
+    width: 32%;
+    box-sizing: border-box;
+    font-size: 14px;
+    color: #666;
+}
+
+.applyForm li .layui-input-block {
+    width: 300px;
+    margin-left: 0;
+    display: inline-block;
+}
+
+.applyButton {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 60px 0;
+    float: left;
+}
+
+.applyButton button {
+    margin: 0 30px;
+}
+
+.applyForm-span {
+    width: 60%;
+    float: left;
+    padding-left: 15px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #FF5151;
+    margin-left: 30%;
+}
+
+.applyForm-mark {
+    padding-left: 25%;
+    margin-top: 20px;
+}
+
+.applyForm-mark em {
+    color: #FF5151;
+    padding: 0 4px;
+}
+
+.applyTitle-border {
+    width: 100%;
+    float: left;
+    margin-top: 30px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.applyForm-radio {
+    width: 100%;
+    display: block;
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 40px;
+
+}
+
+.applyForm-radio dl {
+    width: 100%;
+    float: left;
+    display: block;
+    padding-left: 44px;
+
+}
+
+.applyForm-radio dl dt {
+    /*float: left;
+    display: block;*/
+}
+
+.applyForm-radio dl dd {
+    float: right;
+    display: block;
+}
+
+.applyForm-radio dl dt {
+    line-height: 28px;
+    font-size: 14px;
+    margin: 6px 0;
+    color: #999;
+    display: block;
+}
+
+.applyForm-radio dt em {
+    color: #FF5151;
+    padding-right: 6px;
+    position: relative;
+    top: 2px;
+
+}
+
+.applyTable {
+    width: 90%;
+    margin: 4px 2% 17px 3%;
+    float: left;
+    text-align: center;
+}
+
+.applyTable th {
+    text-align: center;
+
+}
+
+/*红字部分ul*/
+.applyVisitor-ul {
+    width: 80%;
+    float: left;
+    display: block;
+    font-size: 14px;
+    color: #FF5151;
+    margin-left: 35px;
+}
+
+/*红字部分li*/
+.applyVisitor-ul li {
+    margin-bottom: 20px;
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+.applyP {
+    width: 90%;
+    float: left;
+    display: block;
+    margin-left: 5%;
+    font-size: 14px;
+    color: #999;
+    margin-top: 10px;
+
+}
+
+.layui-table th, .layui-table td {
+    position: relative;
+    padding: 9px 15px;
+    min-height: 20px;
+    line-height: 8px;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+}
+
+.ant-form-explain {
+    width: 548px;
+    height: 45px;
+    font-size: 12px;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+    color: rgba(255, 81, 81, 1);
+    line-height: 20px;
+    padding: 5px 0;
+}
+
+.editable-cell {
+    position: relative;
+}
+
+.editable-cell-value-wrap {
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+.editable-row:hover .editable-cell-value-wrap {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 2px 8px;
+}
+
+.ant-table-thead > tr > th {
+    text-align: center;
+}
+
+.ant-table {
+    line-height: 1px;
+}
+
+.ant-table table {
+    text-align: center;
+
+}
+
+.ant-input {
+    height: 26px;
+}
+
+.ant-table-wrapper {
+    padding: 0 35px 10px 40px;
+    width: 90%;
+}
+
+
+
+/*第三页面  单选框*/
+.ant-radio-group {
+
+    position: absolute;
+    display: inline-block;
+    float: right;
+    top: -35px;
+    right: -900px;
+}
+/*第三个页面    文字*/
+.applyForm-radio dl dt {
+    line-height: 28px;
+    margin: 6px 0;
+    display: block;
+    font-size: 14px;
+    font-family: SourceHanSansCN-Regular;
+    font-weight: 400;
+    color: rgba(102, 102, 102, 1);
+}
+
+.applyResults {
+    margin: 0;
+}
+
+.applyResults li {
+    width: 100%;
+
+}
+
+.applyResults li p {
+    margin: 10px 20px;
+    font-size: 14px;
+    color: #333;
+
+}
+
+.applyResults li p span {
+    font-size: 14px;
+    font-family: SourceHanSansCN-Medium;
+    display: inline-block;
+
+}
+
+.applyResults li p .textLeft {
+    width: 25%;
+    text-align: right;
+    padding: 0 5px;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+}
+
+.applyResults li p .textRight {
+    width: 75%;
+    text-align: left;
+    padding: 0 20px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+}
+
+.applyResults li p:first-child {
+    color: #999
+}
+
+.applyResults li :nth-child(3) {
+    margin-top: 10px;
+    margin-left: 265px;
+
+}
+
+.ant-table-tbody > tr > td {
+    padding: 18px 34px;
+}
+
+.ant-table-tbody > tr:hover > td {
+    background: #f8f8f8;
+}
+
+.ant-table-tbody > tr > td {
+    background: #f8f8f8;
+}
+
+.ant-form-item {
+    margin-bottom: 14px;
+}
+
+

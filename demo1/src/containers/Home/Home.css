@@ -1,0 +1,485 @@
+/*轮播图*/
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+/*轮播图照片*/
+.ant-carousel .slick-slide img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/*图片*/
+.indexPhoto {
+    width: 100%;
+
+
+
+}
+
+.indexPhoto dl {
+    display: block;
+    width: 100%;
+}
+
+.indexPhoto dt, .indexPhoto dd {
+    float: left ;
+    display: block;
+    position: relative;
+}
+
+.indexPhoto dt {
+    width: 50%;
+    height: 310px;
+    border-right:3px solid #ffffff;
+
+
+}
+
+.indexPhoto dd {
+    width: 25%;
+    height:157px ;
+    border-right: 3px solid #ffffff;
+    border-bottom: 3px solid #ffffff;
+}
+
+.indexPhoto dt img,
+.indexPhoto dd img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+}
+
+.indexPhoto dd p {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.indexPhoto dd p:first-child {
+    float: left;
+}
+
+/*新闻标题*/
+.indexPhoto-title {
+    /*display: none;*/
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    color: #fff;
+    text-align: center;
+    height: 42px;
+    line-height: 42px;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+/*.indexPhoto dt:hover .indexPhoto-title, .indexPhoto dd:hover .indexPhoto-title {
+    display: block;
+}*/
+
+/*按钮*/
+.btn::after {
+    content: "";
+    clear: both;
+
+}
+
+.btn-hollow {
+    color: #0094E6;
+    border: 1px solid #0094E6;
+}
+
+.btn-hollow-gray {
+    color: #999;
+    border: 1px solid #ddd;
+}
+
+.indexDade {
+    position: relative;
+}
+
+.indexTody {
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    height: 45px;
+    z-index: 1;
+}
+
+.indexTody dt, .indexTody dd {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.indexTody .day {
+    font-size: 40px;
+    color: #333;
+    line-height: 46px;
+}
+
+.indexTody .week {
+    font-size: 14px;
+    color: #333;
+    padding-top: 10px;
+}
+
+/* Acitivites */
+.indexDiv {
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.center {
+    width: 1102px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+/* 标题 */
+
+.titleH4 {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding-bottom: 30px;
+    margin-bottom: 60px;
+}
+
+.titleH4::after {
+    content: "";
+    width: 60px;
+    margin-left: -30px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: 1px;
+    background-color: #0094E6;
+}
+
+.titleH4 h4 {
+    font-size: 36px;
+    margin-bottom: 28px;
+    font-weight: 200;
+}
+
+.titleH4 p {
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 100;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #999;
+
+}
+
+.titleH4 .timeLine {
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 100;
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #999;
+
+}
+
+.titleH4 p span {
+
+    margin-right: 20px;
+}
+
+/*Acitivites*/
+.indexAcitivites {
+    width: 100%;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+}
+
+.indexAcitivites li {
+    float: left;
+    display: block;
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    width: 30%;
+    padding: 20px;
+}
+
+.indexAcitivites li:nth-child(2) {
+    margin: 0 5%;
+}
+
+.indexAcitivites li h4 {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 200;
+}
+
+.indexAcitivites li p {
+    color: #999;
+    font-size: 14px;
+    font-weight: 100;
+    margin-bottom: 20px;
+}
+
+.indexAcitivites li p span {
+    margin-right: 20px;
+}
+
+.indexAcitivites li:hover {
+    background-color: #fafafa;
+}
+
+.indexAcitivites-more {
+    /*  margin-top: 60px;*/
+    text-align: center;
+    width: 120px;
+    margin: 60px auto 0;
+    overflow: hidden;
+    display: block;
+}
+
+/*按钮*/
+.btn {
+    height: 40px;
+    line-height: 38px;
+    border-radius: 100px;
+    display: block;
+    text-align: center;
+    font-size: 15px;
+    min-width: 120px;
+    float: left;
+    box-sizing: border-box;
+    /* font-size: 200;*/
+}
+
+.btn::after {
+    content: "";
+    clear: both;
+}
+
+.btn-hollow {
+    color: #0094E6;
+    border: 1px solid #0094E6;
+}
+
+.btn-hollow-gray {
+    color: #999;
+    border: 1px solid #ddd;
+}
+
+.layui-btn {
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 200;
+    min-width: 90px;
+}
+
+.layui-btn-normal {
+    background-color: #0094E6;
+}
+
+.layui-btn-primary {
+    border-color: #0094E6;
+    color: #0094E6;
+}
+
+.layui-btn-primary:hover {
+    border-color: #0094E6;
+    color: #0094E6;
+}
+
+.colorsBox {
+    margin-bottom: 18px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 12px 0;
+    top: -5px;
+    border-top: 0;
+}
+
+.colorsBox li {
+    font-size: 14px;
+    line-height: 24px;
+    display: inline-block;
+    margin: 0 20px;
+    color: #999;
+}
+
+.colorsBox li .box {
+    display: block;
+    width: 8px;
+    height: 8px;
+    float: left;
+    background: #5BC36C;
+    margin-right: 10px;
+    border-radius: 50%;
+    position: relative;
+    margin-top: 8px;
+}
+
+.colorsBox li .box.blue {
+    background: #F0F0F0;
+}
+
+.WdateDiv .dpTitle {
+    height: 90px;
+    color: #404040;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 10;
+    background-color: rgba(22, 155, 213, 1);
+    border: 1px solid rgba(22, 155, 213, 1);
+}
+
+.WdateDiv .dpTitle .time {
+    width: 127px;
+    height: 30px;
+    float: left;
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    color: #FFFFFF;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.WdateDiv .dpTitle .datetimeP {
+    width: 150px;
+    height: 30px;
+    float: right;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.WdateDiv .dpTitle .datetimeP span {
+    font-family: 'Arial Negreta', 'Arial';
+    font-weight: 700;
+    font-style: normal;
+    color: #FFFFFF;
+    letter-spacing: 1px;
+}
+
+.WdateDiv .dpTitle .dBTop {
+    width: 500px;
+    height: 40px;
+    padding-top: 4px;
+}
+
+.WdateDiv .dpTitle .dBTitle {
+    width: 546px;
+    height: 40px;
+    padding-top: 22px;
+
+}
+
+.WdateDiv .dpTitle .dBTitle li {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: white;
+    margin-right: 28px;
+    margin-left: 30px;
+    font-size: 14px;
+}
+
+.dpBody {
+    width: 548px;
+    height: 293px;
+    background: inherit;
+    background-color: rgba(255, 255, 255, 1);
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(215, 215, 215, 1);
+    border-radius: 0;
+}
+
+.dpBody ul li {
+    width: 78px;
+    height: 45px;
+    line-height: 45px;
+    border: 1px solid #ccc;
+    background: #ffffff;
+    display: inline-block;
+    text-align: center;
+    -webkit-user-select: none;
+}
+
+.dpRound{
+    width: 546px;
+    height: 40px;
+}
+/*文字*/
+.Overdue {
+    width: 274px;
+    height: 66px;
+    display: inline-block;
+    line-height: 66px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.Expire {
+    width: 160px;
+    height: 66px;
+    display: inline-block;
+    line-height: 66px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+/*小图标*/
+.Overdue .yellowBox {
+    display: inline-block;
+    background: #52c41a;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    margin-right:10px;
+
+}
+
+.Expire .blueBox {
+    display: inline-block;
+    background: #faad14;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    margin-right: 10px;
+
+}
+.darkgSelected{
+    color:#ffffff; /*浅绿*/
+    background: #69c0ff !important;
+}
+.darkgUnSelected{
+    color:#ffffff; /*浅灰色*/
+    background: #acacac !important;
+}
+.darkgFull{
+    color:#ffffff; /*橙色*/
+    background: #faad14 !important;
+}
+.green{
+    color:#6ac13c; /*绿色*/
+}
+
+
+
+

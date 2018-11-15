@@ -1,0 +1,160 @@
+.ant-carousel .slick-slide {
+    text-align: center;
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+}
+
+.ant-carousel .slick-slide img {
+    display: inline-block;
+    /*  width: 100%;
+      height: 100%;*/
+}
+
+.ant-carousel .slick-dots {
+    position: absolute;
+    bottom: 90px !important;
+    list-style: none;
+    display: block;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 3px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0
+}
+
+
+.indexDiv,
+.insideDiv{
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.insideDiv {
+    padding-top: 180px;
+}
+
+
+.center {
+    width: 1102px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+
+.wh60 {
+    width: 60%!important;
+}
+.hallBannar {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    background-color: #333;
+}
+
+.hall-photo {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    height: 520px;
+}
+
+.hall-first,
+.hall-second {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 260px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.hall-dl {
+    width: 56%;
+    display: block;
+    position: absolute;
+    height: auto;
+    overflow: hidden;
+    left: 0;
+    top: 0;
+}
+
+.hall-first .hall-dl:nth-child(2n) {
+    left: 56%;
+}
+
+.hall-second .hall-dl:nth-child(1n) {
+    left: -18%;
+}
+
+.hall-second .hall-dl:nth-child(2n) {
+    left: 38%;
+}
+
+.hall-second .hall-dl:nth-child(3n) {
+    left: 94%;
+}
+
+.hall-dl dt {
+    display: block;
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-right: 270px;
+}
+
+.hall-dl dt img {
+    width: 100%;
+    display: block;
+}
+
+.hall-dl dd {
+    background-color: #003755;
+    width: 275px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 50px;
+    font-size: 14px;
+    font-weight: 100;
+    display: block;
+    z-index: 10;
+}
+
+.hall-dl dd::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 45px;
+    border-right: 14px solid #003755;
+    border-bottom: 12px solid transparent;
+    border-top: 12px solid transparent;
+}
+
+.hall-dl dd h4 {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hall-dl dd p {
+    color: rgba(255, 255, 255, .7)
+}
+
+.layui-carousel-arrow {
+    z-index: 20;
+}
+

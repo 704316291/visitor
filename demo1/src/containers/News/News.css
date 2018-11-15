@@ -1,0 +1,124 @@
+/* newList */
+
+.newList-dl {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+
+.newList-dl dl {
+    width: 100%;
+    margin: 40px 0;
+    padding: 0 50px 0 40px;
+    position: relative;
+    float: left;
+    display: block;
+}
+
+.newList-dl dl:last-child::after {
+    content: "";
+    clear: both;
+}
+
+.insideDiv dl.active{
+    position: relative;
+}
+.insideDiv {
+    padding-top: 180px;
+}
+.insideDiv {
+    width: 100%;
+    padding: 100px 0;
+    overflow: hidden;
+    margin: 0;
+}
+
+.insideDiv dl.active h4,
+.insideDiv dl:hover h4 {
+    color: #0094E6;
+}
+
+.insideDiv dl.active::before,
+.insideDiv dl:hover::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    border-left: 8px solid #0094E6;
+    border-right: 8px solid #0094E6;
+}
+
+.insideDiv dl dd a {
+    display: none;
+}
+
+.insideDiv dl.active dd a,
+.insideDiv dl:hover dd a {
+    float: right;
+    display: block;
+}
+
+.newList-dl dl dt,
+.newList-dl dl dd {
+    float: left;
+    display: block;
+}
+
+.newList-dl dl dt {
+    width: 346px;
+    height: 207px;
+}
+
+.newList-dl dl dt img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.newList-dl dl dd {
+    position: absolute;
+    right: 50px;
+    left: 346px;
+    top: 0;
+    padding-left: 100px;
+    box-sizing: border-box;
+}
+
+.newList-dl dl h4 {
+    border-bottom: 1px solid #f2f2f2;
+    width: 100%;
+    margin: 10px 0;
+    overflow: hidden;
+    padding-bottom: 27px;
+    font-size: 20px;
+    color: #333;
+
+}
+
+.newList-dl dl p {
+    color: #999;
+    margin: 20px 0;
+    width: 100%;
+    overflow: hidden;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+
+/* 分页条 */
+
+.paging {
+    width: 100%;
+    text-align: center;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+
+
