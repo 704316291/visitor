@@ -17,8 +17,6 @@
 .indexPhoto {
     width: 100%;
 
-
-
 }
 
 .indexPhoto dl {
@@ -27,7 +25,7 @@
 }
 
 .indexPhoto dt, .indexPhoto dd {
-    float: left ;
+    float: left;
     display: block;
     position: relative;
 }
@@ -35,14 +33,13 @@
 .indexPhoto dt {
     width: 50%;
     height: 310px;
-    border-right:3px solid #ffffff;
-
+    border-right: 3px solid #ffffff;
 
 }
 
 .indexPhoto dd {
     width: 25%;
-    height:157px ;
+    height: 157px;
     border-right: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
 }
@@ -340,8 +337,8 @@
     position: relative;
     box-sizing: border-box;
     z-index: 10;
-    background-color: rgba(22, 155, 213, 1);
-    border: 1px solid rgba(22, 155, 213, 1);
+    background: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(241, 241, 241, 1);
 }
 
 .WdateDiv .dpTitle .time {
@@ -351,7 +348,7 @@
     font-family: 'Arial Negreta', 'Arial';
     font-weight: 700;
     font-style: normal;
-    color: #FFFFFF;
+    color: #000;
     font-size: 14px;
     letter-spacing: 1px;
     padding-top: 10px;
@@ -359,18 +356,43 @@
 }
 
 .WdateDiv .dpTitle .datetimeP {
-    width: 150px;
-    height: 30px;
-    float: right;
+    width: 404px;
+    height: 90px;
     text-align: center;
-    padding-top: 10px;
+    /* padding-left: 85px; */
+    margin: auto;}
+
+.Today {
+    display: inline-block;
+    width: 70px;
+    height: 59px;
+    font-size: 48px;
+    font-family: SourceHanSansCN-Bold;
+    font-weight: bold;
+    color: #000;
+    padding-right: 12px;
+    text-align: center;
+}
+.next-month-btn-day{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+}
+.Month{
+    display: inline-block;
+    width: 100px;
+    height: 20px;
+
+}
+.ChinaBeijing{
+
 }
 
 .WdateDiv .dpTitle .datetimeP span {
     font-family: 'Arial Negreta', 'Arial';
     font-weight: 700;
     font-style: normal;
-    color: #FFFFFF;
+    color: #000;
     letter-spacing: 1px;
 }
 
@@ -380,21 +402,24 @@
     padding-top: 4px;
 }
 
-.WdateDiv .dpTitle .dBTitle {
-    width: 546px;
+.WdateDiv .dBTitle {
+    width: 548px;
     height: 40px;
-    padding-top: 22px;
+    padding-top: 17px;
+    border: 1px solid rgba(241, 241, 241, 1);
+    text-align: center;
+    border-bottom: none;
+    border-top: none;
 
 }
 
-.WdateDiv .dpTitle .dBTitle li {
+.WdateDiv .dBTitle li {
     display: inline-block;
-    width: 20px;
-    height: 20px;
-    color: white;
-    margin-right: 28px;
-    margin-left: 30px;
+    color: #000;
     font-size: 14px;
+    width: 56px;
+    height: 19px;
+
 }
 
 .dpBody {
@@ -402,82 +427,85 @@
     height: 293px;
     background: inherit;
     background-color: rgba(255, 255, 255, 1);
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(215, 215, 215, 1);
+    border: 1px solid rgba(241, 241, 241, 1);
+    border-top: none;
     border-radius: 0;
 }
 
+.dpBody ul {
+    width: 400px;
+    height: 240px;
+    margin: 0 auto;
+}
+
 .dpBody ul li {
-    width: 78px;
-    height: 45px;
-    line-height: 45px;
-    border: 1px solid #ccc;
+    width: 56px;
+    height: 50px;
+    line-height: 50px;
+    border: 1px solid #FFF;
     background: #ffffff;
     display: inline-block;
     text-align: center;
     -webkit-user-select: none;
 }
 
-.dpRound{
+.dpRound {
     width: 546px;
     height: 40px;
 }
 /*文字*/
-.Overdue {
-    width: 274px;
-    height: 66px;
+.Overdue , .Expire {
+    width: 273px;
+    height: 52px;
     display: inline-block;
     line-height: 66px;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
+    color:rgba(153,153,153,1)
 }
 
-.Expire {
-    width: 160px;
-    height: 66px;
-    display: inline-block;
-    line-height: 66px;
-    text-align: center;
-    font-size: 16px;
-
-}
 
 /*小图标*/
-.Overdue .yellowBox {
+.Overdue .yellowBox,.Expire .blueBox{
     display: inline-block;
-    background: #52c41a;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    margin-right:10px;
 
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size:14px;
+    font-family:SourceHanSansCN-Light;
+    font-weight:300;
+    color:rgba(153,153,153,1)
+}
+.Overdue .yellowBox {
+    background: #52c41a;
 }
 
 .Expire .blueBox {
-    display: inline-block;
     background: #faad14;
-    width: 17px;
-    height: 17px;
-    border-radius: 50%;
-    margin-right: 10px;
+}
 
+.darkgSelected {
+    color: #69c0ff; /*浅绿*/
+    background: #ffffff !important;
+    border-radius: 50%;
 }
-.darkgSelected{
-    color:#ffffff; /*浅绿*/
-    background: #69c0ff !important;
+
+.darkgUnSelected {
+    color: #999999; /*浅灰色*/
+    background: #fff !important;
 }
-.darkgUnSelected{
-    color:#ffffff; /*浅灰色*/
-    background: #acacac !important;
-}
-.darkgFull{
-    color:#ffffff; /*橙色*/
+
+.darkgFull {
+    color: #ffffff; /*橙色*/
     background: #faad14 !important;
 }
-.green{
-    color:#6ac13c; /*绿色*/
+
+.green {
+    color: #6ac13c; /*绿色*/
 }
 
 

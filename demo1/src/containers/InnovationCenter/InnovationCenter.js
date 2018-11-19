@@ -7,7 +7,7 @@ import {connect} from "react-redux"
 import actions from "../../store/actions"
 
 
-let img1 = require("../../static/images/watch_alt_large.jpg");
+
 let img2 = require("../../static/images/photo-01.png");
 
  class InnovationCenter extends React.Component {
@@ -31,7 +31,7 @@ let img2 = require("../../static/images/photo-01.png");
             <div>
                 <Carousel autoplay>
                     {this.state.GetExhibitionBanner.map((item) => {
-                        return <div key={item.ID}><img src={item.ImagePath} alt=""/></div>
+                        return <div key={item.ID}><img src={'http://10.122.27.51' +item.ImagePath} alt=""/></div>
                     })}
                 </Carousel>
             </div>

@@ -128,7 +128,7 @@
     height:167px;
     margin-left:60px;
 }
-.QRCode p{
+.QRCode .Accounts{
     width:295px;
     font-size:14px;
     font-family:SourceHanSansCN-Light;
@@ -139,7 +139,7 @@
     padding-top: 12px;
 
 }
-.newList-li p {
+.newList-li{
     width: 803px;
     font-size: 14px;
     font-family: SourceHanSansCN-Light;

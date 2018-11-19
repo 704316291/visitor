@@ -13,8 +13,6 @@ class Nav extends React.Component {
     render() {
         return (
             <div className="navDiv">
-                <div>
-                </div>
                 <div className="navLogo"></div>
                 <ul className="nav-ul">
                     <li><NavLink to="/Login">
@@ -67,7 +65,6 @@ class Nav extends React.Component {
                             /></NavLink>
                     </li>
                 </ul>
-
             </div>
 
 

@@ -52,7 +52,6 @@ export default class Home extends React.Component {
                     <div className="line1"></div>
                     <ul className="newList-ul">
                         <li className="newList-li">
-                            <h4>活动内容</h4>
                             {this.props.local === "en" ?
                                 <div dangerouslySetInnerHTML={{__html: Detail1.ContentEN}}></div> :
                                 <div dangerouslySetInnerHTML={{__html: Detail1.ContentCN}}></div>}
@@ -69,7 +68,7 @@ export default class Home extends React.Component {
                         ei est.</p>
                     <div className="QRCode">
                         <img src={img1} alt=""/>
-                        <p>
+                        <p className="Accounts">
                             扫描二维码，关注XXX公众号，快来报名参观吧~
                             欢迎━(*｀∀´*)ノ亻!
                         </p>

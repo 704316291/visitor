@@ -1,30 +1,29 @@
 import React from 'react';
-/*import './Activities.css';*/
+import './Activities.css';
 import actions from "../../store/actions";
 import {connect} from "react-redux";
 import {Sumbit} from "../../api/api.js"
 import {Form} from "antd/lib/index";
 import {Button, message, Table} from 'antd';
 import {FormattedMessage} from 'react-intl';
-import {GetLMSMainIndustry, GetOccupation, GetVisitPurpose, GetVisitTime} from "../../api/api";
 
 const FormItem = Form.Item;
 
-
 class Activities5 extends React.Component {
     state = {
-        disabled: true,
-        SumBit: {},
+        /* disabled: true,*/
+        /*      SumBit: {},*/
         dataSource: [],
         DataResult: [],
         Industry: [],
         data: []
     };
 
-    componentWillMount() {
-        let values1 = this.props.Activities.value;
+    /*  componentWillMount() {
 
-    }
+
+      }
+  */
 
     /*上一步按钮*/
     handleBack = (e) => {
@@ -46,38 +45,34 @@ class Activities5 extends React.Component {
             ThirteenToEighteen: this.props.Activities2.value.ThirteenToEighteen,
             CollegeStudents: this.props.Activities2.value.CollegeStudents,
             Adults: this.props.Activities2.value.Adults,
-            Name: this.props.Activities3.value.values.Name,
-            MobilePhone: this.props.Activities3.value.values.MobilePhone,
-            EMail: this.props.Activities3.value.values.EMail,
-            Nationality: this.props.Activities3.value.values.Nationality,
-            Occupation: this.props.Activities3.value.values.Occupation,
-            /*    Creator: ""string"",*/
-            /* CreationTime: ""2018-10-23T05:59:11.873Z"",
-             LastModifier"": ""string"",
-             LastModificationTime: ""2018-10-23T05:59:11.873Z"",
-             GroupApplyOrderItemCollection: [
-             {
-                 ID: ""string"",
-                 OrderID: ""string"",
-                 Nationality: ""string"",
-                 OrganizationName"": ""string"",
-                 TitlePosition: ""string"",
-                 VisitorsNum: 0*/
+            Name: this.props.Activities3.value.Name,
+            MobilePhone: this.props.Activities3.value.MobilePhone,
+            EMail: this.props.Activities3.value.EMail,
+            Nationality: this.props.Activities3.value.Nationality,
+            Occupation: this.props.Activities3.value.Occupation,
+            Creator: "string",
+            CreationTime: "2018-10-23T05:59:11.873Z",
+            LastModifier: "string",
+            LastModificationTime: "2018-10-23T05:59:11.873Z",
+            GroupApplyOrderItemCollection: [
+                {
+                    Nationality: this.props.Activities3.value.Nationality,
+                    OrganizationName: this.props.Activities3.value.TitlePosition,
+                    TitlePosition: this.props.Activities3.value.TitlePosition,
+                    VisitorsNum: this.props.Activities3.value.VisitorsNum
+                }]
         };
-        Sumbit(obj).then((response) => {
-            let data = response.DataResult;
-            if (data) {
-                message.warning('提交成功');
-            } else {
-                message.warning('提交失败');
-            }
+        Sumbit(obj).then(() => {
+            message.warning('提交成功');
         });
-
-    };
+    }
 
 
     render() {
-        console.log(this.props.local);
+        console.log(this.props.Activities.value);
+        console.log(this.props.Activities2.value);
+        console.log(this.props.Activities3.value);
+
         const formItemLayout = {
             labelCol: {
                 xs: {span: 14},
@@ -88,19 +83,7 @@ class Activities5 extends React.Component {
                 sm: {span: 16},
             },
         };
-        console.log(this.state.SumBit);
 
-        const totality = this.props.Activities2.e;
-        console.log(totality);
-     /*   let values1 = this.props.Activities.value;
-
-        let values2 = this.props.Activities2.value;
-
-        let values3 = this.props.Activities3.value.values;*/
-
-     /*   let ary1 = Object.keys(values1);
-        let ary2 = Object.keys(values2);
-        let ary3 = Object.keys(values3);*/
         const columns = [
             {
                 title: 'Nationality',
@@ -147,13 +130,14 @@ class Activities5 extends React.Component {
                     </dl>
                     {/*第一部分*/}
                     <h4 className="applyTitle">Customer Information</h4>
-                    <Form style={{margin: 0}}>
+                    <Form>
                         {/*名字*/}
                         <FormItem
                             {...formItemLayout}
                             label={<FormattedMessage
                                 id="intl-Activities3-name"
-                            />}>
+                            />}
+                        >
                             {this.props.Activities3.value.Name}
                         </FormItem>
                         {/*手机*/}
@@ -208,7 +192,9 @@ class Activities5 extends React.Component {
                         {/*来访语言*/}
                         <FormItem
                             {...formItemLayout}
-                            label=" Visiting language"
+                            label={<FormattedMessage
+                                id="intl-Activities-language"
+                            />}
                         >
                             {this.props.Activities.value.language}
                         </FormItem>
@@ -226,7 +212,9 @@ class Activities5 extends React.Component {
                         {/*注意事项*/}
                         <FormItem
                             {...formItemLayout}
-                            label="Note：(Special requests)">
+                            label={<FormattedMessage
+                                id="intl-Activities-Note"
+                            />}>
                             {this.props.Activities.value.note}
                         </FormItem>
                         {/*单位*/}
@@ -241,7 +229,9 @@ class Activities5 extends React.Component {
                         {/*来访行业*/}
                         <FormItem
                             {...formItemLayout}
-                            label="Subordinate to the industry"
+                            label={<FormattedMessage
+                                id="intl-Activities-Subordinate"
+                            />}
                         >
                             {this.props.Activities.value.Industry}
                         </FormItem>
@@ -254,11 +244,7 @@ class Activities5 extends React.Component {
                         >
                             {this.props.Activities.value.VisitPurpose}
                         </FormItem>
-
-
                     </Form>
-
-
                     <h4 className="applyTitle">Visitor‘s Information</h4>
                     <Table
                         bordered
@@ -288,9 +274,13 @@ class Activities5 extends React.Component {
                     </div>
                     {/*上一步，下一步*/}
                     <p className="applyButton">
-                        <Button className="layui-btn layui-btn-primary" onClick={this.handleBack}>上一步</Button>
+                        <Button className="layui-btn layui-btn-primary" onClick={this.handleBack}>
+                            上一步
+                        </Button>
                         <Button className="layui-btn layui-btn-normal" type="primary"
-                                onClick={this.handleSubmit}>提交</Button>
+                                onClick={this.handleSubmit}>
+                            提交
+                        </Button>
                     </p>
                 </div>
             </div>
@@ -298,4 +288,5 @@ class Activities5 extends React.Component {
     }
 }
 
-export default connect(state => ({...state}), actions)(Form.create()(Activities5))
+export default connect(state => ({...state}), actions, ...actions.Language)(Form.create()(Activities5))
+

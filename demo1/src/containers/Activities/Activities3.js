@@ -42,6 +42,7 @@ class RegistrationForm extends React.Component {
                 let info = {
                     ...values, dataSource: this.state.dataSource
                 }
+                console.log(info);
                 if (!err) {
                     this.props.addValue3(info);
                     localStorage.setItem("addValue3", values);
@@ -136,6 +137,7 @@ class RegistrationForm extends React.Component {
         const addInfo = (e, name, key) => {
         const {getFieldValue,} = this.props.form;
         const {dataSource} = this.state;
+
         dataSource.forEach((item) => {
                     if (item.key === Number(key)) {
                         switch (name) {
@@ -166,15 +168,14 @@ class RegistrationForm extends React.Component {
                 title: 'Nationality',
                 dataIndex: 'Nationality',
                 width: '13%',
+                required:true,
                 render: (text, record) => {
                     let Nationality = record.Nationality;
                     return (
                         getFieldDecorator(`Nationality${record.key}`, {
                             initialValue: Nationality,
-                        }, {
-                            rules: [{required: true, message: 'Please input your text!', whitespace: true}],
                         })(
-                            <input onBlur={(e) => addInfo(e, 'Nationality', `${record.key}`)} required/>
+                            <input onBlur={(e) => addInfo(e, 'Nationality', `${record.key}`)}/>
                         )
                     )
                 }
@@ -182,6 +183,7 @@ class RegistrationForm extends React.Component {
                 title: 'Name of Organization',
                 dataIndex: 'NameOfOrganization',
                 width: '13%',
+                required:true,
                 render: (text, record) => {
                     let NameOfOrganization = record.NameOfOrganization;
                     return (
@@ -211,7 +213,7 @@ class RegistrationForm extends React.Component {
                     )
                 }
             }, {
-                title: '*No. of Visitors',
+                title: 'No. of Visitors',
                 dataIndex: 'NoOfVisitors',
                 width: '13%',
                 render: (text, record) => {
@@ -228,10 +230,9 @@ class RegistrationForm extends React.Component {
                 title: '操作',
                 dataIndex: 'opertor',
                 key: 'opertor',
-                width: '5%',
+                width: '8%',
                 render: (text, record) => {
-                    return (
-                        <div>
+                    return (<div style={{width:"50px", height:"10px"}}>
                             <span onClick={this.handleAdd} style={{
                                 fontSize: "20px",
                                 fontWeight: "bold",
@@ -242,6 +243,7 @@ class RegistrationForm extends React.Component {
                                 fontSize: "20px",
                                 fontWeight: "bold",
                                 marginLeft: "20px",
+                                marginBottom:"20px",
                                 cursor: "pointer"
                             }}
                                   onClick={() => this.handleDelete(`${record.key}`)}> - </span>
@@ -266,11 +268,9 @@ class RegistrationForm extends React.Component {
             wrapperCol: {span: 14},
         };
         const radioStyle = {
-            /* height: '30px',
-             lineHeight: '30px',*/
+            height: '30px',
+            lineHeight: '30px',
         };
-        let a= this.props.local === "en" ?"China":"中国";
-
 
 
         return (<Form onSubmit={this.handleSubmit}>
@@ -337,16 +337,16 @@ class RegistrationForm extends React.Component {
                             style={{width: 300}}
                             filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
                         >
-                            <Option value={a}><FormattedMessage
+                            <Option value= {this.props.local === "en" ?"China":"中国"}><FormattedMessage
                                 id="intl-Activities3-China"
                             /></Option>
-                            <Option value="a"><FormattedMessage
+                            <Option value={ this.props.local === "en" ?"The British":"英国"}><FormattedMessage
                                 id="intl-Activities3-TheBritish"
                             /></Option>
-                            <Option value="b"><FormattedMessage
+                            <Option value={ this.props.local === "en" ?"Japan":"日本"}><FormattedMessage
                                 id="intl-Activities3-Japan"
                             /></Option>
-                            <Option value="c"><FormattedMessage
+                            <Option value={ this.props.local === "en" ?"The United States":"美国"}><FormattedMessage
                                 id="intl-Activities3-TheUnitedStates"
                             /></Option>
                         </Select>,
@@ -362,9 +362,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('Occupation', {
                         initialValue: historyDate && historyDate.Occupation,
                         rules: [{
-                            required: false, message: 'Please confirm your password!',
-                        }, {
-                            validator: this.compareToFirstPassword,
+                            required: true, message: 'Please confirm your Occupation!',
                         }],
                     })(
                         <Select
@@ -375,7 +373,7 @@ class RegistrationForm extends React.Component {
                         >
                             {this.state.data.map((item, i) => {
                                 return <Option key={i}
-                                               value={item.Value}>{this.props.local === "en" ? item.ValueNameCN : item.ValueNameEN}</Option>
+                                               value={item.Value}>{this.props.local === "en" ? item.ValueNameEN : item.ValueNameCN}</Option>
                             })}
                         </Select>
                     )}

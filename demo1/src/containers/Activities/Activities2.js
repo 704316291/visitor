@@ -126,8 +126,7 @@ class RegistrationForm extends React.Component {
                 {getFieldDecorator("UnderTwelve", {
                     initialValue: historyDate && historyDate.UnderTwelve,
                     rules: [{
-                        patten: /^\d{0,3}$ /, message: 'Please input your number!',
-                        required: true,
+                        required: true , message: 'Please input your number!',
                     }],
                 })(
                     <Input style={{width: "300px"}} onBlur={this.totalPeo} type="number" min="0"

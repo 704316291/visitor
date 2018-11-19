@@ -35,11 +35,7 @@ export const GetFAQListByType= (params) => axios.get("api/FAQApi/GetFAQListByTyp
 
 /*News新闻列表*/
 export const GetNewList = (params) => {
-  /* axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-    axios.defaults.withCredentials = true;*/
-    return axios.post("api/NoticeApi/GetNewList", params,{
-
-    });
+    return axios.post("api/NoticeApi/GetNewList", params);
 
 
 }

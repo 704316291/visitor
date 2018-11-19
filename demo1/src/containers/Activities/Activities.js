@@ -12,7 +12,6 @@ import moment from 'moment';
 
 const FormItem = Form.Item;
 const Option = Select.Option;
-
 class RegistrationForm extends React.Component {
     state = {
         data: [],
@@ -27,15 +26,13 @@ class RegistrationForm extends React.Component {
         e.preventDefault();
         this.props.form.validateFieldsAndScroll((err, values) => {
             if (!err) {
-             /*   values.VisitDate = values.VisitDate.format("YYYY-MM-DD");*/
+              values.VisitDate = values.VisitDate.format("YYYY-MM-DD");
                 this.props.addValue1(values);
                 window.scrollTo(300, 450);
                 this.props.history.push("/Activities2")
             }
         });
     };
-
-
     /*获取数据*/
     componentWillMount() {
         /*临时存储数据*/
@@ -113,7 +110,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('VisitDate', {
                         initialValue: historyDate.VisitDate === undefined ? null : moment(historyDate.VisitDate, dateFormat),
                         rules: [{
-                            required: false, message: 'Please input your Date of visit!',
+                            required: true, message: 'Please input your Date of visit!',
                         }]
                     })(
                         <DatePicker style={{width: "300px"}}/>
@@ -126,11 +123,9 @@ class RegistrationForm extends React.Component {
                         id="intl-Activities-VisitingTime"
                     />}>
                     {getFieldDecorator('VisitTime', {
-                        /*  initialValue: historyDate.VisitTime === undefined ? null : historyDate.VisitTime.split("-")[0] + ":00" + "-" + historyDate.VisitTime.split("-")[1],*/
+                          initialValue: historyDate.VisitTime === undefined ? null : historyDate.VisitTime.split("-")[0] + ":00" + "-" + historyDate.VisitTime.split("-")[1],
                         rules: [{
-                            required: false, message: 'Please input your Visiting time!',
-                        }, {
-                            validator: this.validateToNextPassword,
+                            required: true, message: 'Please input your Visiting time!',
                         }],
                     })(
                         <Select
@@ -155,7 +150,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('VisitUnit', {
                         initialValue: historyDate && historyDate.VisitUnit,
                         rules: [{
-                            required: false, message: 'Please confirm your password!',
+                            required: true, message: 'Please confirm your password!',
 
                         }, {
                             validator: this.compareToFirstPassword,
@@ -174,7 +169,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('Industry', {
                         initialValue: historyDate && historyDate.Industry,
                         rules: [{
-                            required: false, message: 'Please confirm your password!',
+                            required: true, message: 'Please confirm your password!',
                         }],
                     })(
                         <Select
@@ -199,7 +194,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('VisitPurpose', {
                         initialValue: historyDate.VisitPurpose && historyDate.VisitPurpose,
                         rules: [{
-                            required: false, message: 'Please confirm your password!',
+                            required: true, message: 'Please confirm your password!',
                         }],
                     })(
                         <Select
@@ -230,25 +225,25 @@ class RegistrationForm extends React.Component {
                             showSearch
                             style={{width: 300}}
                         >
-                            <Option value="1">
+                            <Option value={ this.props.local === "en" ?"Chinese":"中文"}>
                                 <FormattedMessage
                                     id="intl-Activities-language1"
                                 />
                             </Option>
-                            <Option value="2">
+                            <Option value={ this.props.local === "en" ?"Korean":"韩语"}>
                                 <FormattedMessage
                                     id="intl-Activities-language2"
                                 />
                             </Option>
-                            <Option value="3">
+                            <Option value={ this.props.local === "en" ?"Japanese":"日文"}>
                                 <FormattedMessage
                                     id="intl-Activities-language3"
                                 /></Option>
-                            <Option value="4">
+                            <Option value={ this.props.local === "en" ?"English":"英语"}>
                                 <FormattedMessage
                                     id="intl-Activities-language4"
                                 /></Option>
-                            <Option value="5">
+                            <Option value={ this.props.local === "en" ?"French":"法语"}>
                                 <FormattedMessage
                                     id="intl-Activities-language5"
                                 /></Option>

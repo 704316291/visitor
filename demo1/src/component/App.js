@@ -9,7 +9,6 @@ import AboutUs from "../containers/AboutUs/AboutUs";
 import Activities from "../containers/Activities/Activities";
 import Activities2 from "../containers/Activities/Activities2";
 import Activities3 from "../containers/Activities/Activities3";
-import Activities4 from "../containers/Activities/Activities4";
 import Activities5 from "../containers/Activities/Activities5";
 import NearTermActivities from "../containers/Home/NearTermActivities";
 import NearTerm from "../containers/News/NearTerm";
@@ -54,7 +53,7 @@ const langMap = {
                  return enUS;
                  break;
          }
-     }
+     };
 
     render() {
         return <IntlProvider locale={this.props.local} messages={this.chooseLocale()}>
@@ -69,7 +68,6 @@ const langMap = {
                         <Route path='/Activities' component={Activities}/>
                         <Route path='/Activities2' component={Activities2}/>
                         <Route path='/Activities3' component={Activities3}/>
-                        <Route path='/Activities4' component={Activities4}/>
                         <Route path='/Activities5' component={Activities5}/>
                         <Route path='/NearTermActivities' component={NearTermActivities}/>
                         <Route path='/NearTerm' component={NearTerm}/>

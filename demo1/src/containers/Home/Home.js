@@ -343,14 +343,14 @@ class Home extends React.Component {
 
     render() {
         const aryDate = this.getTime(this.state.year, this.state.month);
-        const styleDay = this.state.day
+        const styleDay = this.state.day;
         return (<div>
             {/*轮播图片*/}
             <div>
                 <Carousel autoplay>
                     {
                         this.state.GetHomeBanner.map((item) => {
-                            return <div key={item.ID}><img src={item.ImagePath} alt=""/></div>
+                            return <div key={item.ID}><img src={'http://10.122.27.51' + item.ImagePath} alt=""/></div>
                         })}
                 </Carousel>
             </div>
@@ -377,64 +377,70 @@ class Home extends React.Component {
                             <div className="zAccountPlanL span5 no-margin-left">
                                 <div className="WdateDiv" style={{width: "548px"}}>
                                     <div className="dpTitle">
-                                        <div className="dBTop">
-                                            <p className="time">{this.state.year}年
-                                                {this.state.month}月{this.state.day}日</p>
-                                            <div className="datetimeP">
-                                                <Icon type="left"
-                                                      onClick={this.prevMonth}
-                                                      style={{
-                                                          fontSize: "18px",
-                                                          color: "#fff",
-                                                          paddingRight: "20px"
-                                                      }}/>
-                                                <span>{this.state.year}年{this.state.month}月</span>
-                                                <Icon type="right"
-                                                      onClick={this.nextMonth}
-                                                      style={{
-                                                          fontSize: "18px",
-                                                          color: "#fff",
-                                                          paddingLeft: "20px"
-                                                      }}/>
+                                        <div className="datetimeP">
+                                            <Icon type="left"
+                                                  onClick={this.prevMonth}
+                                                  style={{
+                                                      fontSize: "18px",
+                                                      color: "#000",
+                                                      paddingRight: "90px"
+                                                  }}/>
+                                            <p className="Today">{this.state.day}</p>
+                                            <div className="next-month-btn-day">
+                                                <p className="Month">
+                                                    <span>{this.state.month}月{this.state.year}年</span>
+
+                                                </p>
+                                                <p className="ChinaBeijing">China - Beijing</p>
                                             </div>
+
+                                            <Icon type="right"
+                                                  onClick={this.nextMonth}
+                                                  style={{
+                                                      fontSize: "18px",
+                                                      color: "#000",
+                                                      paddingLeft: "90px"
+                                                  }}/>
                                         </div>
 
-                                        <ul className="dBTitle">
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Sun"
-                                                />
-                                            </li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Mon"
-                                                />
-                                            </li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Tue"
-                                                /></li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Wed"
-                                                />
-                                            </li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Thu"
-                                                />
-                                            </li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Fir"
-                                                />
-                                            </li>
-                                            <li>
-                                                <FormattedMessage
-                                                    id="intl-Home-Sat"
-                                                /></li>
-                                        </ul>
+
+
                                     </div>
+                                    <ul className="dBTitle">
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Sun"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Mon"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Tue"
+                                            /></li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Wed"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Thu"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Fir"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-Home-Sat"
+                                            /></li>
+                                    </ul>
                                     <div className="dpBody">
                                         <ul>
                                             {aryDate.map((item, index) => {
@@ -444,7 +450,7 @@ class Home extends React.Component {
                                                         onClick={this.isClassName(item.year, item.month, item.day) === "darkgSelected" ? () => {
                                                             this.getDay(item)
                                                         } : null}>
-                                                        <span>{item.day}</span>
+                                                        <span style={{width:"20px",height:"20px", borderRadius:"50%"}}>{item.day}</span>
                                                     </li>)
                                             })}
                                         </ul>
@@ -491,7 +497,7 @@ class Home extends React.Component {
                                 <a onClick={() => {
                                     this.handleBack1(item.ID)
                                 }}>
-                                    <img src={item.ImagePath}/>
+                                    <img src={'http://10.122.27.51' +item.ImagePath}/>
                                     <span
                                         className="indexPhoto-title">{this.props.local === "en" ? item.TitleEN : item.TitleCN}</span>
                                 </a>

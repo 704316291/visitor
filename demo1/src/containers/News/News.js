@@ -8,7 +8,7 @@ import {GetNewList} from "../../api/api";
 export default class News extends React.Component {
     state = {
         NewList: [],
-        current: 1,
+        current: null,
         NumberOfPages: {},
 
     };
@@ -22,16 +22,18 @@ export default class News extends React.Component {
         const params = {
             "PublishType": 0,
             "Status": 1,
-            "PageIndex": {page},
-            "PageSize": 1,
+            "PageIndex": page,
+            "PageSize": 10,
         };
+
         GetNewList(params).then((response) => {
-            let data = response.DataResult;
             this.setState({
-                NewList: data.DataList,
+                NumberOfPages:  response.DataResult,
+                NewList:  response.DataResult.DataList,
                 current: page,
             });
         })
+        window.scrollTo(300, 350);
     };
 
     componentWillMount() {
@@ -39,26 +41,21 @@ export default class News extends React.Component {
             "PublishType": 0,
             "Status": 1,
             "PageIndex": 1,
-            "PageSize": 1,
+            "PageSize": 10,
         };
         GetNewList(params).then((response) => {
-            let data = response.DataResult;
-            console.log(data);
             this.setState({
-                NumberOfPages: data,
-                NewList: data.DataList,
+                NumberOfPages:  response.DataResult,
+                NewList:  response.DataResult.DataList,
             });
-        }).catch((error) => {
-            console.log(error);
-        });
+        })
 
     }
 
 
     render() {
-        const NumberOfPages = [...this.state.NumberOfPages];
-        console.log(NumberOfPages);
-        console.log(NumberOfPages.TotalPageCount);
+      let NumberOfPages = this.state.NumberOfPages;
+        let NumberOfPages1 = eval(NumberOfPages);
         return (<div className="insideDiv">
                 <div className="center">
                     <div className="titleH4">
@@ -70,7 +67,7 @@ export default class News extends React.Component {
                         {this.state.NewList.map((item) => {
                             return <dl key={item.ID}>
                                 <dt>
-                                    <img src={item.ImagePath}/>
+                                    <img src={'http://10.122.27.51' +item.ImagePath}/>
                                 </dt>
                                 <dd>
                                     <h4>{item.TitleCN}</h4>
@@ -83,22 +80,17 @@ export default class News extends React.Component {
                         })}
                     </div>
                     {/*分页*/}
-
                     <div className="paging">
-
                         <Pagination
-                   /*         current={parseInt(NumberOfPages.TotalPageCount)}*/
-                            current={this.state.current}
+                            current={NumberOfPages1.CurrentPageIndex}
                             onChange={this.onChange}
-                            total={parseInt(NumberOfPages.TotalItemCount)}
+                            PageSize={NumberOfPages1.PageSize}
+                            total={NumberOfPages1.TotalItemCount}
                         />
-
                     </div>
 
                 </div>
             </div>
-
-
         )
     }
 }
