@@ -26,13 +26,11 @@ class Nav extends React.Component {
                                 id="intl-Nav-Register"
                             /></NavLink>
                     </li>
-                    <li>
-                        <NavLink to="#">
-                            <i className="icon-languageZ"
-                               onClick={this.props.changeLanguage}> {this.props.local === "en" ? "cn" : "en"}</i>
-                        </NavLink>
-                    </li>
                 </ul>
+                <div className="icoEN">
+                    <i className="icon-languageZ" style={{fontStyle:"normal"}}
+                       onClick={this.props.changeLanguage}> {this.props.local === "en" ? "CN" : "EN"}</i>
+                </div>
                 <ul className="nav-ul nav-login">
                     <li>
                         <NavLink to="/Home">

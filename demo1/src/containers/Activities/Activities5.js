@@ -11,68 +11,63 @@ const FormItem = Form.Item;
 
 class Activities5 extends React.Component {
     state = {
-        /* disabled: true,*/
-        /*      SumBit: {},*/
         dataSource: [],
         DataResult: [],
         Industry: [],
         data: []
     };
-
-    /*  componentWillMount() {
-
-
-      }
-  */
-
     /*上一步按钮*/
     handleBack = (e) => {
         e.preventDefault();
+        let info={
+            cleanVis:false,
+        }
+        this.props.Clean(info);
         this.props.history.push("/Activities3")
     };
     /*下一步按钮*/
+
     handleSubmit = (e) => {
+        // this.props.Activities3.value.dataSource.forEach((item,index)=>{
+        //             delete item.key
+        // })
+        console.log(this.props.Activities3.value.dataSource);
+
         e.preventDefault();
-        let obj = {
-            RequestDate: "2018-10-23T05:59:11.873Z",
-            VisitDate: "2018-10-23T05:59:11.873Z",
-            VisitTime: this.props.Activities.value.VisitTime,
-            VisitUnit: this.props.Activities.value.VisitUnit,
-            Industry: this.props.Activities.value.Industry,
-            Language: this.props.Activities.value.Language,
-            Note: this.props.Activities.value.Note,
-            UnderTwelve: this.props.Activities2.value.UnderTwelve,
-            ThirteenToEighteen: this.props.Activities2.value.ThirteenToEighteen,
-            CollegeStudents: this.props.Activities2.value.CollegeStudents,
-            Adults: this.props.Activities2.value.Adults,
-            Name: this.props.Activities3.value.Name,
-            MobilePhone: this.props.Activities3.value.MobilePhone,
-            EMail: this.props.Activities3.value.EMail,
-            Nationality: this.props.Activities3.value.Nationality,
-            Occupation: this.props.Activities3.value.Occupation,
-            Creator: "string",
-            CreationTime: "2018-10-23T05:59:11.873Z",
-            LastModifier: "string",
-            LastModificationTime: "2018-10-23T05:59:11.873Z",
-            GroupApplyOrderItemCollection: [
-                {
-                    Nationality: this.props.Activities3.value.Nationality,
-                    OrganizationName: this.props.Activities3.value.TitlePosition,
-                    TitlePosition: this.props.Activities3.value.TitlePosition,
-                    VisitorsNum: this.props.Activities3.value.VisitorsNum
-                }]
+        const obj = {
+            "Requestor":"",//申请人
+            "RequestDate": this.props.Activities1.value.VisitDate,
+            "VisitDate": this.props.Activities1.value.VisitDate,
+            "VisitTime": this.props.Activities1.value.VisitTime,
+            "VisitUnit": this.props.Activities1.value.VisitUnit,
+            "Industry": this.props.Activities1.value.Industry,
+           "Language" : this.props.Activities1.value.language,
+           "VisitPurpose" : this.props.Activities1.value.VisitPurposeObj.Value,
+            "Note": this.props.Activities1.value.note,
+            "UnderTwelve": Number(this.props.Activities2.value.UnderTwelve),
+            "ThirteenToEighteen": Number(this.props.Activities2.value.ThirteenToEighteen),
+            "CollegeStudents":Number( this.props.Activities2.value.CollegeStudents),
+            "Adults": Number(this.props.Activities2.value.Adults),
+            "Name": this.props.Activities3.value.Name,
+            "MobilePhone": this.props.Activities3.value.MobilePhone,
+            "EMail": this.props.Activities3.value.EMail,
+            "Nationality": this.props.Activities3.value.Nationality,
+            "Occupation": this.props.Activities3.value.OccupationObj.Value,
+            "GroupApplyOrderItemCollection": this.props.Activities3.value.dataSource
         };
-        Sumbit(obj).then(() => {
-            message.warning('提交成功');
-        });
+        console.log(obj)
+        Sumbit(obj).then((response) => {
+            let data=JSON.parse( response.DataResult);
+            {this.props.local === "en" ? data.msgEN : data.msgCN}
+             });
     }
 
 
     render() {
-        console.log(this.props.Activities.value);
-        console.log(this.props.Activities2.value);
-        console.log(this.props.Activities3.value);
-
+       const{VisitTime11}= this.props.Activities1.value.VisitTime
+        console.log(this.props.Activities3.value.OccupationObj);
+        console.log(this.props.Activities1.value.VisitPurpose);
+        console.log(this.props.Activities3.value.dataSource);
         const formItemLayout = {
             labelCol: {
                 xs: {span: 14},
@@ -83,7 +78,25 @@ class Activities5 extends React.Component {
                 sm: {span: 16},
             },
         };
-
+        const columns1 = [
+            {
+                title: '国籍',
+                dataIndex: 'Nationality',
+                width: '13%',
+            }, {
+                title: '来宾单位',
+                dataIndex: 'OrganizationName',
+                width: '13%',
+            }, {
+                title: '职位',
+                dataIndex: 'TitlePosition',
+                width: '13%',
+            }, {
+                title: '*人数',
+                dataIndex: 'VisitorsNum',
+                width: '13%',
+            },
+        ];
         const columns = [
             {
                 title: 'Nationality',
@@ -91,7 +104,7 @@ class Activities5 extends React.Component {
                 width: '13%',
             }, {
                 title: 'Name of Organization',
-                dataIndex: 'NameOfOrganization',
+                dataIndex: 'OrganizationName',
                 width: '13%',
             }, {
                 title: 'Title / Position',
@@ -99,7 +112,7 @@ class Activities5 extends React.Component {
                 width: '13%',
             }, {
                 title: '*No. of Visitors',
-                dataIndex: 'NoOfVisitors',
+                dataIndex: 'VisitorsNum',
                 width: '13%',
             },
         ];
@@ -109,27 +122,38 @@ class Activities5 extends React.Component {
                     <ul className="timeLine">
                         <li className="active">
                             <i>1</i>
-                            <p>Number of visitors</p>
+                            <p> <FormattedMessage
+                                id="intl-Activities-NumberOfVisitors"
+                            /></p>
                         </li>
                         <li className="active">
                             <i>2</i>
-                            <p>Number of visitors</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-NumberOfVisitors2"
+                            /></p>
                         </li>
                         <li className="active">
                             <i>3</i>
-                            <p>Datails</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-Datails"
+                            /></p>
                         </li>
                         <li className="active">
                             <i>4</i>
-                            <p>Confirmation</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-Confirmation"
+                            /></p>
                         </li>
                     </ul>
                     <dl className="applyDl">
-                        <dt>Please select the number of visitors by age group.</dt>
-                        <dd>*Individual reservation can be made for a group of maximum 9 people</dd>
+                        <dt><FormattedMessage
+                            id="intl-Activities5-Information"
+                        /></dt>
                     </dl>
                     {/*第一部分*/}
-                    <h4 className="applyTitle">Customer Information</h4>
+                    <h4 className="applyTitle"><FormattedMessage
+                        id="intl-Activities5-Contact"
+                    /></h4>
                     <Form>
                         {/*名字*/}
                         <FormItem
@@ -176,7 +200,7 @@ class Activities5 extends React.Component {
                                 id="intl-Activities3-Occupation"
                             />}
                         >
-                            {this.props.Activities3.value.Occupation}
+                            {this.props.local ==="en"?this.props.Activities3.value.OccupationObj.ValueNameEN:this.props.Activities3.value.OccupationObj.ValueNameCN}
                         </FormItem>
                         {/*第二部分*/}
                         <h4 className="applyTitle"> Visiting Group Information </h4>
@@ -187,7 +211,16 @@ class Activities5 extends React.Component {
                                 id="intl-Activities-Dateofvisit"
                             />}
                         >
-                            {this.props.Activities.value.VisitDate}
+                            {this.props.Activities1.value.VisitDate}
+                        </FormItem>
+                        {/*时间*/}
+                        <FormItem
+                            {...formItemLayout}
+                            label={<FormattedMessage
+                                id="intl-Activities-VisitingTime"
+                            />}
+                        >
+                            {VisitTime11===undefined?null:(VisitTime11.split("-")[0]<10?"0"+VisitTime11.split("-")[0]:VisitTime11.split("-")[0])+":00"+"-"+(VisitTime11.split("-")[1]<10?"0"+VisitTime11.split("-")[1]:VisitTime11.split("-")[1])+":00"}
                         </FormItem>
                         {/*来访语言*/}
                         <FormItem
@@ -196,7 +229,7 @@ class Activities5 extends React.Component {
                                 id="intl-Activities-language"
                             />}
                         >
-                            {this.props.Activities.value.language}
+                            {this.props.Activities1.value.language}
                         </FormItem>
                         {/*人员总数*/}
                         <FormItem
@@ -209,14 +242,6 @@ class Activities5 extends React.Component {
                                 : {this.props.Activities2.value.CollegeStudents}People\
                                 Adults:{this.props.Activities2.value.Adults}People)</p>
                         </FormItem>
-                        {/*注意事项*/}
-                        <FormItem
-                            {...formItemLayout}
-                            label={<FormattedMessage
-                                id="intl-Activities-Note"
-                            />}>
-                            {this.props.Activities.value.note}
-                        </FormItem>
                         {/*单位*/}
                         <FormItem
                             {...formItemLayout}
@@ -224,7 +249,7 @@ class Activities5 extends React.Component {
                                 id="intl-Activities-VisitTheUnit"
                             />}
                         >
-                            {this.props.Activities.value.VisitUnit}
+                            {this.props.Activities1.value.VisitUnit}
                         </FormItem>
                         {/*来访行业*/}
                         <FormItem
@@ -233,7 +258,7 @@ class Activities5 extends React.Component {
                                 id="intl-Activities-Subordinate"
                             />}
                         >
-                            {this.props.Activities.value.Industry}
+                            {this.props.Activities1.value.Industry}
                         </FormItem>
                         {/*来访目的*/}
                         <FormItem
@@ -241,45 +266,53 @@ class Activities5 extends React.Component {
                             label={<FormattedMessage
                                 id="intl-Activities-VisitingPurpose"
                             />}
-                        >
-                            {this.props.Activities.value.VisitPurpose}
+                        > {this.props.local ==="en"?this.props.Activities1.value.VisitPurposeObj.ValueNameEN:this.props.Activities1.value.VisitPurposeObj.ValueNameCN}
+                        </FormItem>
+                        {/*注意事项*/}
+                        <FormItem
+                            {...formItemLayout}
+                            label={<FormattedMessage
+                                id="intl-Activities-Note"
+                            />}>
+                            {this.props.Activities1.value.note}
                         </FormItem>
                     </Form>
-                    <h4 className="applyTitle">Visitor‘s Information</h4>
+                    <h4 className="applyTitle">Visitor's Information</h4>
                     <Table
                         bordered
                         dataSource={this.props.Activities3.value.dataSource}
-                        columns={columns}
+                        columns=  {this.props.local === "en" ? columns : columns1}
                         style={{width: 1000}}
                     />
                     {/*红色字体*/}
                     <div className="applyForm-radio" style={{marginBottom: "40px"}}>
                         <ul className="applyVisitor-ul">
                             <li>
-                                * Your Reservation will to confirmed via email and by text message
+                                * I agree to the Terms and Conditions of the Lenovo service.
                             </li>
                             <li>
-                                * I agree to the collection and use of personal information.
+                                *I agree to the collection and use of personal information.
                             </li>
                             <li>
-                                * I agree to the Terms and Conditions of the S/I/M service.
+                                *I agree to the collection and use of required personal information
                             </li>
                             <li>
-                                * I agree to the collection and use of optional personal information.
-                            </li>
-                            <li>
-                                * I agree to the collection and use of optional personal information.
+                                *I agree to the collection and use of optional personal information
                             </li>
                         </ul>
                     </div>
                     {/*上一步，下一步*/}
                     <p className="applyButton">
                         <Button className="layui-btn layui-btn-primary" onClick={this.handleBack}>
-                            上一步
+                            <FormattedMessage
+                                id="intl-Activities-Previous"
+                            />
                         </Button>
                         <Button className="layui-btn layui-btn-normal" type="primary"
                                 onClick={this.handleSubmit}>
-                            提交
+                            <FormattedMessage
+                                id="intl-Activities-Submit"
+                            />
                         </Button>
                     </p>
                 </div>
@@ -288,5 +321,9 @@ class Activities5 extends React.Component {
     }
 }
 
-export default connect(state => ({...state}), actions, ...actions.Language)(Form.create()(Activities5))
+
+
+export default connect(state => ({...state, ...state.Language,...state.Home}), {...actions, ...actions.Language,...actions.Home})(Form.create()(Activities5))
+
+
 

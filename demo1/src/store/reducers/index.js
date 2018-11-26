@@ -1,16 +1,19 @@
 import {combineReducers} from "redux";
-import  Activities from "./Activities"
+import Home from "./Home";
+import Activities1 from "./Activities1"
 import Activities2 from "./Activities2";
- import Activities3 from "./Activities3";
- import  Language from "./Language"
-// import Activities4 from "../actions/Activities4";
+import Activities3 from "./Activities3";
+import Activities5 from "./Activities5";
+import Language from "./Language"
+
 
 /*写入reducer导出的文件名称*/
-let reducer=combineReducers({
-    Activities,
-   Activities2,
+let reducer = combineReducers({
+    Home,
+    Activities1,
+    Activities2,
     Activities3,
+    Activities5,
     Language,
-    // Activities4,
 });
-export default  reducer
+export default reducer

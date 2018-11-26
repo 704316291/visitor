@@ -31,7 +31,12 @@ let img2 = require("../../static/images/photo-01.png");
             <div>
                 <Carousel autoplay>
                     {this.state.GetExhibitionBanner.map((item) => {
-                        return <div key={item.ID}><img src={'http://10.122.27.51' +item.ImagePath} alt=""/></div>
+                        return <div key={item.ID}>
+                            <a href={item.URL}>
+                                <img src={'http://10.122.27.51' +item.ImagePath} alt=""/>
+                            </a>
+
+                        </div>
                     })}
                 </Carousel>
             </div>
@@ -54,7 +59,7 @@ let img2 = require("../../static/images/photo-01.png");
                         <div className="hall-photo">
                             <div className="hall-first">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -62,7 +67,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -70,7 +75,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -80,7 +85,7 @@ let img2 = require("../../static/images/photo-01.png");
                             </div>
                             <div className="hall-second">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能联想</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -88,7 +93,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能出行</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -97,7 +102,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -109,7 +114,7 @@ let img2 = require("../../static/images/photo-01.png");
                         <div className="hall-photo">
                             <div className="hall-first">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -117,7 +122,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -125,7 +130,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -135,7 +140,7 @@ let img2 = require("../../static/images/photo-01.png");
                             </div>
                             <div className="hall-second">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能联想</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -143,7 +148,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能出行</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -152,7 +157,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -164,7 +169,7 @@ let img2 = require("../../static/images/photo-01.png");
                         <div className="hall-photo">
                             <div className="hall-first">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -172,7 +177,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -180,7 +185,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -190,7 +195,7 @@ let img2 = require("../../static/images/photo-01.png");
                             </div>
                             <div className="hall-second">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能联想</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -198,7 +203,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能出行</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -207,7 +212,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -219,7 +224,7 @@ let img2 = require("../../static/images/photo-01.png");
                         <div className="hall-photo">
                             <div className="hall-first">
                                 <dl className="hall-dl">
-                                    <dt><img src="../../static/images/photo-01.png"/></dt>
+                                    <dt><img src="../../static/images/photo-01.png" alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -227,7 +232,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -235,7 +240,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -245,7 +250,7 @@ let img2 = require("../../static/images/photo-01.png");
                             </div>
                             <div className="hall-second">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能联想</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -253,7 +258,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能出行</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -262,7 +267,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -274,7 +279,7 @@ let img2 = require("../../static/images/photo-01.png");
                         <div className="hall-photo">
                             <div className="hall-first">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -282,7 +287,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -290,7 +295,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -300,7 +305,7 @@ let img2 = require("../../static/images/photo-01.png");
                             </div>
                             <div className="hall-second">
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能联想</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -308,7 +313,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能出行</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil
@@ -317,7 +322,7 @@ let img2 = require("../../static/images/photo-01.png");
                                     </dd>
                                 </dl>
                                 <dl className="hall-dl">
-                                    <dt><img src={img2}/></dt>
+                                    <dt><img src={img2} alt=""/></dt>
                                     <dd>
                                         <h4>智能家居</h4>
                                         <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil

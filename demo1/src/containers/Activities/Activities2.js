@@ -5,6 +5,7 @@ import actions from "../../store/actions"
 import {connect} from 'react-redux';
 
 const FormItem = Form.Item;
+
 class RegistrationForm extends React.Component {
     state = {
         totalPeople: 0,
@@ -13,7 +14,12 @@ class RegistrationForm extends React.Component {
     /*上一步*/
     handleBack = (e) => {
         e.preventDefault();
-        this.props.history.push("/Activities");
+        let info={
+            cleanVis:false,
+        }
+        this.props.Clean(info);
+
+        this.props.history.push("/Activities1");
     };
     /*四个input框*/
     totalPeo = () => {
@@ -53,16 +59,15 @@ class RegistrationForm extends React.Component {
         const {form} = this.props;
         let values = form.getFieldsValue();
         let totalPeople = (Number(values["UnderTwelve"]) + Number(values["ThirteenToEighteen"]) + Number(values["CollegeStudents"]) + Number(values["Adults"]));
-        if (totalPeople > 30) {
-            message.warning('人数总和不能超过三十，请重新输入！');
+        if (totalPeople > 30||totalPeople===0) {
+            message.warning('人数总和不能小于0或者大于30，请您重新输入！');
         } else {
             this.props.form.validateFieldsAndScroll((err, values) => {
-                let info={
-                    ...values,totalPeople:this.state.totalPeople
+                let info = {
+                    ...values, totalPeople: this.state.totalPeople
                 }
                 if (!err) {
                     this.props.addValue2(info);
-                    localStorage.setItem("addValue2", values);
                     window.scrollTo(300, 350);
                     this.props.history.push("/Activities3");
                     console.log('Received values of form: ', values);
@@ -74,27 +79,35 @@ class RegistrationForm extends React.Component {
 
     componentWillMount() {
         /*临时存储*/
-        const {value}=this.props;
-        if(value.totalPeople !== undefined){
+        let cleanValue =this.props.cleanValue;
+        if( cleanValue.cleanVis === true){
             this.setState({
-                totalPeople:value.totalPeople
+                historyDate:{}
             })
-        }
-        let history = this.props.value;
-        if (history !== undefined || history !== '') {
-            this.setState({
-                historyDate: {
-                    UnderTwelve: history.UnderTwelve,
-                    ThirteenToEighteen: history.ThirteenToEighteen,
-                    CollegeStudents: history.CollegeStudents,
-                    Adults: history.Adults,
-                    Industry: history.Industry,
-                    language: history.language,
-                    VisitPurpose: history.VisitPurpose,
-                }
-            })
+        }else{
+            const {value} = this.props;
+            if (value.totalPeople !== undefined) {
+                this.setState({
+                    totalPeople: value.totalPeople
+                })
+            }
+            let history = this.props.value;
+            if (history !== undefined || history !== '') {
+                this.setState({
+                    historyDate: {
+                        UnderTwelve: history.UnderTwelve,
+                        ThirteenToEighteen: history.ThirteenToEighteen,
+                        CollegeStudents: history.CollegeStudents,
+                        Adults: history.Adults,
+                        Industry: history.Industry,
+                        language: history.language,
+                        VisitPurpose: history.VisitPurpose,
+                    }
+                })
 
+            }
         }
+
     }
 
     render() {
@@ -126,20 +139,22 @@ class RegistrationForm extends React.Component {
                 {getFieldDecorator("UnderTwelve", {
                     initialValue: historyDate && historyDate.UnderTwelve,
                     rules: [{
-                        required: true , message: 'Please input your number!',
+                        required: true, message: 'Please input your number!',
                     }],
                 })(
                     <Input style={{width: "300px"}} onBlur={this.totalPeo} type="number" min="0"
                            placeholder="Please input the number"
-                         />
+                    />
                 )}
             </FormItem>
             {/*13岁到18*/}
             <FormItem
                 {...formItemLayout}
+                help=""
                 label={<FormattedMessage
                     id="intl-Activities2-Eighteen"
-                />}
+                />
+                }
 
             >
                 {getFieldDecorator('ThirteenToEighteen', {
@@ -150,7 +165,7 @@ class RegistrationForm extends React.Component {
                 })(
                     <Input placeholder="Please input the number" min="0" onBlur={this.totalPeo} style={{width: "300px"}}
                            type="number"
-                          />
+                    />
                 )}
             </FormItem>
             {/*大学生*/}
@@ -158,7 +173,8 @@ class RegistrationForm extends React.Component {
                 {...formItemLayout}
                 label={<FormattedMessage
                     id="intl-Activities2-Students"
-                />}>
+                />}
+                help="">
                 {getFieldDecorator('CollegeStudents', {
                     initialValue: historyDate && historyDate.CollegeStudents,
                     rules: [{
@@ -171,12 +187,13 @@ class RegistrationForm extends React.Component {
                 })(
                     <Input placeholder="Please input the number" min="0" onBlur={this.totalPeo} style={{width: "300px"}}
                            type="number"
-                         />
+                    />
                 )}
             </FormItem>
             {/*成年人*/}
             <FormItem
                 {...formItemLayout}
+                help=""
                 label={<FormattedMessage
                     id="intl-Activities2-Adults"
                 />}
@@ -191,28 +208,38 @@ class RegistrationForm extends React.Component {
                 })(
                     <Input placeholder="Please input the number" onBlur={this.totalPeo} style={{width: "300px"}} min="0"
                            type="number"
-                        />
+                    />
                 )}
             </FormItem>
             <div>
                 <p style={{fontSize: "14px", paddingLeft: "240px", marginBottom: "10px"}}>
-                    Aotal number of visitors <span style={{color: "red", padding: "0 10px"}}>
-                    {this.state.totalPeople}</span> People.</p>
+                    <FormattedMessage
+                        id="intl-Activities2-Total number of visitors "
+                    /> <span style={{color: "red", padding: "0 10px"}}>
+                    {this.state.totalPeople}</span> <FormattedMessage
+                    id="intl-Activities2-People"
+                /> </p>
             </div>
             <FormItem style={{textAlign: "center"}}>
                 <Button
                     style={{textAlign: "left", marginRight: "30px"}} onClick={this.handleBack}>
-                    上一步
+                    <FormattedMessage
+                        id="intl-Activities-Previous"
+                    />
                 </Button>
                 <Button type="primary" htmlType="submit"
                         style={{textAlign: "right"}}>
-                    下一步
+                    <FormattedMessage
+                        id="intl-Activities-Next"
+                    />
                 </Button>
             </FormItem>
         </Form>
     }
 }
+
 const WrappedRegistrationForm = Form.create()(RegistrationForm);
+
 class Activities2 extends React.Component {
     render() {
         return (<div className="insideDiv">
@@ -220,31 +247,47 @@ class Activities2 extends React.Component {
                     <ul className="timeLine">
                         <li className="active">
                             <i>1</i>
-                            <p>Number of visitors</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-NumberOfVisitors"
+                            /></p>
                         </li>
                         <li className="active">
                             <i>2</i>
-                            <p>Number of visitors</p>
+                            <p>
+                                <FormattedMessage
+                                    id="intl-Activities-NumberOfVisitors2"
+                                /></p>
                         </li>
                         <li>
                             <i>3</i>
-                            <p>Datails</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-Datails"
+                            /></p>
                         </li>
                         <li>
                             <i>4</i>
-                            <p>Confirmation</p>
+                            <p><FormattedMessage
+                                id="intl-Activities-Confirmation"
+                            /></p>
                         </li>
                     </ul>
                     <dl className="applyDl">
-                        <dt>Please select the number of visitors by age group.</dt>
-                        <dd>*Individual reservation can be made for a group of maximum 9 people</dd>
+                        <dt><FormattedMessage
+                            id="intl-Activities2-Please"
+                        /></dt>
+                        <dd><FormattedMessage
+                            id="intl-Activities2-Guided"
+                            /></dd>
                     </dl>
-                    <h4 className="applyTitle">Customer Information</h4>
+                    <h4 className="applyTitle"><FormattedMessage
+                        id="intl-Activities2-Number"
+                    /></h4>
                     <WrappedRegistrationForm {...this.props}/>
                 </div>
             </div>
         )
     }
 }
-export default connect(state => ({...state.Activities2, ...state.Language}), {...actions.Activities2, ...actions.Language})(Activities2)
+
+export default connect(state => ({...state.Activities2, ...state.Language,...state.Home}), {...actions.Activities2, ...actions.Language,...actions.Home})(Activities2)
 

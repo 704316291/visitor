@@ -11,12 +11,13 @@ let Activities3 = {
             type: TYPES.VOTE_SUPB
         };
         },
-    addValue3(value){
+    addValue3(value,){
         return{
             type:TYPES.ACT_THREE,
-            value
+            value,
         }
 
     },
+
 };
 export default Activities3;

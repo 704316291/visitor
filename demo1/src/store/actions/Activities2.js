@@ -1,7 +1,7 @@
 import *as TYPES from '../action-types';
 
 let Activities2 = {
-   oneInput(value) {//通过函数执行返回一个对象来使用dispatch派发
+ oneInput(value) {//通过函数执行返回一个对象来使用dispatch派发
         return {
             type: TYPES.VOTE_SUPA,
             value
@@ -26,7 +26,7 @@ let Activities2 = {
         }
 
     },
-    totalNumber(value){
+    History(value){
        return{
            type:TYPES.VOTE_TOTAL,
            value

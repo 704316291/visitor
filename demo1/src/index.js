@@ -5,9 +5,6 @@ import {BrowserRouter} from "react-router-dom";
 import store from "./store";
 import App from "./component/App";
 import "./static/css/reset.min.css";
-
-
-
 render(
     <Provider store={store}>
     <BrowserRouter>

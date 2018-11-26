@@ -14,10 +14,6 @@
 }
 
 .ant-steps-item-icon {
-
-}
-
-.ant-steps-item-icon {
     background: rgba(60, 190, 180, 1) !important
 }
 
@@ -228,7 +224,7 @@
     width: 100%;
     float: left;
     margin-top: 30px;
-    border-bottom: 1px solid #f2f2f2;
+    /*border-bottom: 1px solid #f2f2f2;*/
 }
 
 .applyForm-radio {
@@ -443,7 +439,7 @@
 }
 
 .ant-table-tbody > tr > td {
-    padding: 18px 34px;
+    padding: 12px 24px;
 }
 
 .ant-table-tbody > tr:hover > td {

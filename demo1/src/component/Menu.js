@@ -16,7 +16,7 @@ import {connect} from "react-redux";
                     <FormattedMessage
                         id="intl-Menu-Email"
                     />
-                  ：hanwk1@lenovo.com</li>
+                  ：cbc@lenovo.com</li>
                 <li><i className="iconfont  icon-dianhua"/>
                     <FormattedMessage
                         id="intl-Menu-Phone"

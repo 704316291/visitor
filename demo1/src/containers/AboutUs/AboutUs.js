@@ -1,6 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import {Menu, Tabs, Collapse} from 'antd';
+import { Tabs, Collapse} from 'antd';
 import {StickyContainer, Sticky,} from 'react-sticky';
 import {FormattedMessage} from 'react-intl';
 import actions from "../../store/actions"
@@ -271,7 +271,7 @@ class AboutUs extends React.Component {
                                     id="intl-AboutUS-Facilities"
                                 />} key="3">
                                 <div className="aboutRight aboutUs" style={{width: "890px", overflow: "hidden"}}>
-                                    <div style={{
+                                    <div  style={{
                                         width: "813px",
                                         height: "216px",
                                         marginBottom: "38px",
@@ -296,7 +296,9 @@ class AboutUs extends React.Component {
                                                     id="intl-AboutUS- Facilities1"
                                                 />
                                             </h3>
-                                            <p style={{fontSize: "14px"}}>
+
+                                            <p style={{fontSize: "14px", wordBreak: "break-all",
+                                                wordWrap: "break-word"}}>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities2"
                                                 /></p>
@@ -352,6 +354,7 @@ class AboutUs extends React.Component {
                                         }}>
                                             <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                         </div>
+
                                         <div style={{
                                             textAlign: "left",
                                             float: "right",
@@ -361,7 +364,8 @@ class AboutUs extends React.Component {
                                             <h3 style={{marginBottom: "29px"}}>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities1"
-                                                /></h3>
+                                                />
+                                            </h3>
                                             <p style={{fontSize: "14px"}}>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities2"
@@ -391,14 +395,14 @@ class AboutUs extends React.Component {
                                                         tab={this.props.local === "en" ? item.ValueNameEN : item.ValueNameCN}
                                                         key={i} style={{height: 500}}
                                                         value={item.Value}>
-                                                        <Collapse bordered={false} defaultActiveKey={['1']}>
-                                                            {this.state.ListByType.map((item) => {
+                                                        <Collapse bordered={false} showArrow={false}>
+                                                            {this.state.ListByType.map((item,i) => {
                                                                 return <Panel
                                                                     header={`Q : ${this.props.local === "en" ? item.TitleEN : item.TitleCN}`}
-                                                                    key={item.ID} style={{color: "red !important"}}>
+                                                                    key={i} style={{color: "red !important"}}>
                                                                     <span
-                                                                        style={{color: "#007aff", fontWeight: "bold"}}>A :</span>
-                                                                    {this.props.local === "en" ?
+                                                                        style={{color: "#007aff", fontWeight: "bold"}}>A : </span>
+                                                                     {this.props.local === "en" ?
                                                                         <p dangerouslySetInnerHTML={{__html: item.ContentEN}}
                                                                            style={{display: "inline-block"}}>
 
@@ -411,6 +415,7 @@ class AboutUs extends React.Component {
                                                                 </Panel>
                                                             })}
                                                         </Collapse>
+
                                                     </TabPane>
 
                                                 })}
@@ -443,24 +448,24 @@ class AboutUs extends React.Component {
                                                   /></span>
                                             <span>1378163846</span>
                                         </div>
-                                        <Tabs defaultActiveKey="1">
+                                        <Tabs defaultActiveKey="1"   style={{ height:"500px"  }}>
                                             <TabPane tab="Driving" key="1">
-                                                <div style={{width: "700px", height: "300px"}}>
+                                                <div style={{width: "700px", }}>
                                                     <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                                 </div>
                                             </TabPane>
                                             <TabPane tab="Parking for Tour Buses" key="2">
-                                                <div style={{width: "700px", height: "300px"}}>
+                                                <div style={{width: "700px", }}>
                                                     <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                                 </div>
                                             </TabPane>
                                             <TabPane tab="Public transportation" key="3">
-                                                <div style={{width: "700px", height: "300px"}}>
+                                                <div style={{width: "700px"}}>
                                                     <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                                 </div>
                                             </TabPane>
                                             <TabPane tab="Lenovo entrance" key="4">
-                                                <div style={{width: "700px", height: "300px"}}>
+                                                <div style={{width: "700px"}}>
                                                     <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                                 </div>
                                             </TabPane>

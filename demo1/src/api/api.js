@@ -4,7 +4,7 @@ export const GetHomeBanner = () => axios.get("api/BannerApi/GetHomeBanner");
 /*首页新闻图*/
 export const GetExternalWebpage = () => axios.get("api/NoticeApi/GetExternalWebpage");
 /*展厅轮播图*/
-export const GetExhibitionBanner = () => axios.get("api/BannerApi/GetHomeBanner");
+export const GetExhibitionBanner = () => axios.get("api/BannerApi/GetExhibitionBanner");
 /*来访目的*/
 export const GetVisitPurpose = () => axios.get("api/BaseValueApi/GetVisitPurpose");
 /*来访时间*/
@@ -52,9 +52,7 @@ export const CalendarBusy = (params) => axios.get("api/VisitCalendarApi/Calendar
     }
 });
 /*第四步提交*/
-export const Sumbit = (params) => axios.post("api/GroupApplyApi/Sumbit", {
-    params: params
-});
+export const Sumbit = (params) => axios.post("api/GroupApplyApi/Sumbit",params);
 
 
 

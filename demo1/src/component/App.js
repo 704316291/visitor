@@ -7,6 +7,7 @@ import Register from "../containers/Register/Register";
 import Home from "../containers/Home/Home";
 import AboutUs from "../containers/AboutUs/AboutUs";
 import Activities from "../containers/Activities/Activities";
+import Activities1 from "../containers/Activities/Activities1";
 import Activities2 from "../containers/Activities/Activities2";
 import Activities3 from "../containers/Activities/Activities3";
 import Activities5 from "../containers/Activities/Activities5";
@@ -30,29 +31,18 @@ import {withRouter} from 'react-router-dom' ;
 
 addLocaleData([...en, ...zh]);
 
-const langMap = {
-    'zh': zhCN,
-    'en': enUS
-};
-
 
 
  class App extends Component {
-    constructor(props, context) {
-        super(props, context)
-    }
      chooseLocale=()=> {
-         switch (this.props.local) {
+         switch(this.props.local) {
              case 'en':
                  return enUS;
-                 break;
              case 'zh':
                  return zhCN;
-                 break;
              default:
                  return enUS;
-                 break;
-         }
+     }
      };
 
     render() {
@@ -65,7 +55,8 @@ const langMap = {
                     <Switch>
                         <Route path='/Home' exact component={Home}/>
                         <Route path='/InnovationCenter' exact component={InnovationCenter}/>
-                        <Route path='/Activities' component={Activities}/>
+                        <Route path='/Activities' component={Activities} />
+                        <Route path='/Activities1' component={Activities1}/>
                         <Route path='/Activities2' component={Activities2}/>
                         <Route path='/Activities3' component={Activities3}/>
                         <Route path='/Activities5' component={Activities5}/>

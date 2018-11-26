@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios' ;
 import './NearTermActivities.css';
 let img1=require("../../static/images/QRCode.jpg")
 

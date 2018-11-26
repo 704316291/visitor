@@ -2,7 +2,8 @@ import React from 'react';
 import './Home.css';
 import 'antd/dist/antd.css';
 import './NearTermActivities';
-import './NearTermActivities';
+import '../../containers/AboutUs/AboutUs';
+import "../../containers/Activities/Activities1"
 import {Carousel, Icon} from 'antd';
 import {FormattedMessage} from 'react-intl';
 import {connect} from "react-redux"
@@ -193,12 +194,15 @@ class Home extends React.Component {
     }
 
     /*点击当前时间，进行跳转到团队申请页面*/
-    getDay = () => {
+    getDay = (item) => {
+        console.log(1);
+        console.log(item);
+        let time =item.year+"-"+item.month+"-"+item.day;
+
+        console.log(time);
         window.scrollTo(300, 150);
-        this.props.history.push("/Activities");
-
+        this.props.history.push({pathname:"/Activities1",name:time});
     };
-
 
     //判断是否需要加类名
     isClassName = (year, month, day) => {
@@ -258,8 +262,9 @@ class Home extends React.Component {
 
         //获取传进来时间的时间戳
         let curDay = new Date(`${year}/${month}/${day}`).valueOf();
+
         if (curDay - start >= 0 && curDay - end <= 0) {
-            return "darkgUnSelected"
+            return "green"
         }
         return this.isSelectFull(year, month, day)
 
@@ -276,20 +281,28 @@ class Home extends React.Component {
         return "darkgSelected"
     }
     /*点击图片，进入详情页*/
-    handleBack = (ID) => {
-        this.props.history.push("/NearTerm", {
-            ID,
-        });
+
+    handleBack1 = (ID) => {
+        this.props.history.push("/NearTerm", {ID});
     };
 
+    handleBack2 = (e) => {
+        e.preventDefault();
+        window.scrollTo(50,0);
+        this.props.history.push("/AboutUs");
+
+    };
 
     componentWillMount() {
+        /*const {cleanValue}=this.props*/
         // 初始化时  获取当天的日期
         let year = new Date().getFullYear(),
             month = new Date().getMonth() + 1,
             day = new Date().getDate(),
             ary = this.getTime(year, month);
         console.log(day);
+        let value={cleanVis:true};
+        this.props.Clean(value);
         this.setState({
             year,
             month,
@@ -303,8 +316,6 @@ class Home extends React.Component {
             this.setState({
                 GetHomeBanner: data
             });
-        }).catch((error) => {
-            console.log(error);
         });
         /*新闻图*/
         GetExternalWebpage().then((response) => {
@@ -312,8 +323,6 @@ class Home extends React.Component {
             this.setState({
                 GetExternalWebpage: data
             })
-        }).catch((error) => {
-            console.log(error);
         });
 
         //默认获取区间时间,申请已满//
@@ -323,37 +332,28 @@ class Home extends React.Component {
                 timeInterval: {startDate: `${year}-${month}-${day}`, endDate: data.ApplyMaxDate},
                 fullTime: data.NotApplyDateList
             })
-        }).catch((error) => {
-            console.log(error);
         });
-
-
     }
-
-    handleBack1 = (ID) => {
-        this.props.history.push("/NearTerm", {ID,});
-    };
-
-    handleBack = (e) => {
-        e.preventDefault();
-        this.props.history.push("/NearTermActivities");
-
-    };
 
 
     render() {
         const aryDate = this.getTime(this.state.year, this.state.month);
-        const styleDay = this.state.day;
         return (<div>
             {/*轮播图片*/}
-            <div>
+            <div style={{width:"100%"}}>
                 <Carousel autoplay>
                     {
                         this.state.GetHomeBanner.map((item) => {
-                            return <div key={item.ID}><img src={'http://10.122.27.51' + item.ImagePath} alt=""/></div>
+                            return <div key={item.ID}>
+                                <a href={item.URL}>
+                                    <img src={'http://10.122.27.51' + item.ImagePath} alt="" style={{width:"100%",height:"100%"}}/>
+                                </a>
+
+                            </div>
                         })}
                 </Carousel>
             </div>
+            {/*第二部分*/}
             <div className="indexDiv">
                 <div className="center">
                     {/*左图*/}
@@ -366,7 +366,7 @@ class Home extends React.Component {
                             <FormattedMessage
                                 id="intl-Home-Character"
                             /></p>
-                        <a className="btn btn-hollow">
+                        <a className="btn btn-hollow" onClick={this.handleBack2}>
                             <FormattedMessage
                                 id="intl-Home-JOINLENOVO"
                             /></a>
@@ -375,7 +375,7 @@ class Home extends React.Component {
                     <div className="indexDade">
                         <div className="zAccountInner zAccount2 clearfix">
                             <div className="zAccountPlanL span5 no-margin-left">
-                                <div className="WdateDiv" style={{width: "548px"}}>
+                                <div className="WdateDiv" style={{width: "450px"}}>
                                     <div className="dpTitle">
                                         <div className="datetimeP">
                                             <Icon type="left"
@@ -389,7 +389,6 @@ class Home extends React.Component {
                                             <div className="next-month-btn-day">
                                                 <p className="Month">
                                                     <span>{this.state.month}月{this.state.year}年</span>
-
                                                 </p>
                                                 <p className="ChinaBeijing">China - Beijing</p>
                                             </div>
@@ -402,9 +401,6 @@ class Home extends React.Component {
                                                       paddingLeft: "90px"
                                                   }}/>
                                         </div>
-
-
-
                                     </div>
                                     <ul className="dBTitle">
                                         <li>
@@ -450,7 +446,11 @@ class Home extends React.Component {
                                                         onClick={this.isClassName(item.year, item.month, item.day) === "darkgSelected" ? () => {
                                                             this.getDay(item)
                                                         } : null}>
-                                                        <span style={{width:"20px",height:"20px", borderRadius:"50%"}}>{item.day}</span>
+                                                        <span style={{
+                                                            width: "20px",
+                                                            height: "20px",
+                                                            borderRadius: "50%"
+                                                        }}>{item.day}</span>
                                                     </li>)
                                             })}
                                         </ul>
@@ -478,7 +478,7 @@ class Home extends React.Component {
                     </div>
                 </div>
             </div>
-            {/*图片*/}
+            {/*新闻图片*/}
             <div className="indexPhoto">
                 <dl>
                     {this.state.GetExternalWebpage.map((item, index,) => {
@@ -487,17 +487,17 @@ class Home extends React.Component {
                                 <a onClick={() => {
                                     this.handleBack1(item.ID)
                                 }}>
-                                    <img src={item.ImagePath}/>
+                                    <img src={'http://10.122.27.51' + item.ImagePath} alt=""/>
                                     <span className="indexPhoto-title">{
                                         this.props.local === "en" ? item.TitleEN : item.TitleCN}</span>
                                 </a>
                             </dt>
-                        }else {
+                        } else {
                             return <dd key={item.ID}>
                                 <a onClick={() => {
                                     this.handleBack1(item.ID)
                                 }}>
-                                    <img src={'http://10.122.27.51' +item.ImagePath}/>
+                                    <img src={'http://10.122.27.51' + item.ImagePath} alt=""/>
                                     <span
                                         className="indexPhoto-title">{this.props.local === "en" ? item.TitleEN : item.TitleCN}</span>
                                 </a>
@@ -508,7 +508,6 @@ class Home extends React.Component {
                     })}
                 </dl>
             </div>
-
             {/*ACITIVITES*/}
             <div className="indexDiv">
                 <div className="center">
@@ -570,7 +569,7 @@ class Home extends React.Component {
                         </li>
                     </ul>
                     <p className="indexAcitivites-more">
-                        <a className="btn btn-hollow-gray" onClick={this.handleBack}>
+                        <a className="btn btn-hollow-gray" >
                             <FormattedMessage
                                 id="intl-Home-MORE"
                             /></a>
@@ -581,4 +580,4 @@ class Home extends React.Component {
     }
 }
 
-export default connect(state => ({...state.Language}), actions.Language)(Home)
+export default connect(state => ({...state.Home, ...state.Language}), {...actions.Home, ...actions.Language})(Home)

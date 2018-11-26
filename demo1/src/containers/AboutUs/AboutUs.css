@@ -109,7 +109,10 @@
     display: block;
     margin-bottom: 10px;
 }
-
+.ant-tabs-nav .ant-tabs-tab {
+    padding: 12px 35px!important ;
+    margin: 0!important;
+}
 .ant-tabs-nav .ant-tabs-tab-active {
     color: #fff;
     font-weight: 500;
@@ -232,6 +235,8 @@
 
 }
 
+
+
 .icon-gantanhao:before {
 
     content: "\e600";
@@ -248,11 +253,22 @@
     padding: 16px 2px !important;
 
 }
-
+/*
 .ant-tabs-nav .ant-tabs-tab:hover {
-    color: rgba(0, 0, 0, 0.65);
+  color: #f8f8f8;
 }
-.ant-tabs-nav .ant-tabs-tab:hover
-/*.ant-tabs-tab-active ant-tabs-tab span:hover{
-    color: #000c17;
+
+.ant-tabs-tab-active ant-tabs-tab span:hover{
+    color: #FFFf;
 }*/
+.border-Bottom{
+    width: 813px;
+    height: 216px;
+    margin-bottom: 38px;
+    border-bottom: 1px  dashed #ccc
+}
+.ant-tabs-nav .ant-tabs-tab {
+    padding: 12px 29px!important;
+    margin: 0!important;
+
+}

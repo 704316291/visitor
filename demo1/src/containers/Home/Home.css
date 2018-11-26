@@ -131,13 +131,13 @@
 /* Acitivites */
 .indexDiv {
     width: 100%;
-    padding: 100px 0;
+    padding: 55px 0;
     overflow: hidden;
     margin: 0;
 }
 
 .center {
-    width: 1102px;
+    width: 1050px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -360,7 +360,8 @@
     height: 90px;
     text-align: center;
     /* padding-left: 85px; */
-    margin: auto;}
+    margin: auto;
+}
 
 .Today {
     display: inline-block;
@@ -373,18 +374,21 @@
     padding-right: 12px;
     text-align: center;
 }
-.next-month-btn-day{
+
+.next-month-btn-day {
     display: inline-block;
     width: 100px;
     height: 40px;
 }
-.Month{
+
+.Month {
     display: inline-block;
     width: 100px;
     height: 20px;
 
 }
-.ChinaBeijing{
+
+.ChinaBeijing {
 
 }
 
@@ -403,7 +407,7 @@
 }
 
 .WdateDiv .dBTitle {
-    width: 548px;
+    width: 450px;
     height: 40px;
     padding-top: 17px;
     border: 1px solid rgba(241, 241, 241, 1);
@@ -423,8 +427,8 @@
 }
 
 .dpBody {
-    width: 548px;
-    height: 293px;
+    width: 450px;
+    height: 270px;
     background: inherit;
     background-color: rgba(255, 255, 255, 1);
     -webkit-box-sizing: border-box;
@@ -436,50 +440,55 @@
 
 .dpBody ul {
     width: 400px;
-    height: 240px;
+    height: 220px;
     margin: 0 auto;
 }
 
 .dpBody ul li {
-    width: 56px;
-    height: 50px;
-    line-height: 50px;
+    width: 31px;
+    height: 30px;
+    margin: 6px 13px;
+    line-height: 30px;
     border: 1px solid #FFF;
     background: #ffffff;
     display: inline-block;
     text-align: center;
     -webkit-user-select: none;
+
 }
 
 .dpRound {
-    width: 546px;
-    height: 40px;
+    width: 450px;
+    height: 49px;
+    line-height: 35px
 }
+
 /*文字*/
-.Overdue , .Expire {
-    width: 273px;
-    height: 52px;
+.Overdue, .Expire {
+    width: 207px;
+    height: 35px;
     display: inline-block;
-    line-height: 66px;
+    line-height: 48px;
     text-align: center;
     font-size: 14px;
-    color:rgba(153,153,153,1)
+    color: rgba(153, 153, 153, 1)
 }
 
-
 /*小图标*/
-.Overdue .yellowBox,.Expire .blueBox{
+.Overdue .yellowBox, .Expire .blueBox {
     display: inline-block;
 
     width: 15px;
     height: 15px;
     border-radius: 50%;
     margin-right: 10px;
-    font-size:14px;
-    font-family:SourceHanSansCN-Light;
-    font-weight:300;
-    color:rgba(153,153,153,1)
+    font-size: 14px;
+    font-family: SourceHanSansCN-Light;
+    font-weight: 300;
+    color: rgba(153, 153, 153, 1)
 }
+
+
 .Overdue .yellowBox {
     background: #52c41a;
 }
@@ -488,24 +497,43 @@
     background: #faad14;
 }
 
+/*可申请的样式*/
 .darkgSelected {
-    color: #69c0ff; /*浅绿*/
+    color: #69c0ff;
     background: #ffffff !important;
     border-radius: 50%;
 }
+.darkgSelected:hover{
+    background: #87e8de !important;
+    color: #f8f8f8;
+}
 
+
+/*当天之前的样式*/
 .darkgUnSelected {
     color: #999999; /*浅灰色*/
     background: #fff !important;
 }
 
+/*申请满的样式*/
 .darkgFull {
     color: #ffffff; /*橙色*/
     background: #faad14 !important;
 }
 
+/*字间距离的样式*/
 .green {
-    color: #6ac13c; /*绿色*/
+    color: #fff !important;
+    background: rgba(240, 240, 240, 1) !important;
+    border-radius: 50%;
+}
+
+/*当天的样式*/
+.dayColor{
+    color: #fff !important;
+    background: #69c0ff !important;
+    border-radius: 50%;
+
 }
 
 

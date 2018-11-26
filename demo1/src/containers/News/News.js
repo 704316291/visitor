@@ -55,7 +55,7 @@ export default class News extends React.Component {
 
     render() {
       let NumberOfPages = this.state.NumberOfPages;
-        let NumberOfPages1 = eval(NumberOfPages);
+        let NumberOfPages1 = parseInt(NumberOfPages);
         return (<div className="insideDiv">
                 <div className="center">
                     <div className="titleH4">
@@ -65,7 +65,7 @@ export default class News extends React.Component {
                     {/*图文介绍*/}
                     <div className="newList-dl">
                         {this.state.NewList.map((item) => {
-                            return <dl key={item.ID}>
+                            return <dl  className="newList-DL" key={item.ID}>
                                 <dt>
                                     <img src={'http://10.122.27.51' +item.ImagePath}/>
                                 </dt>
