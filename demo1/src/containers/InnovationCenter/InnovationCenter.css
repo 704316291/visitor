@@ -43,7 +43,7 @@
 
 
 .center {
-    width: 1102px;
+    width: 1366px;
     margin: 0 auto;
     overflow: hidden;
 }
@@ -63,7 +63,7 @@
 }
 
 .hall-photo {
-    width: 100%;
+    width: 1366px;
     display: block;
     margin: 0 auto;
     overflow: hidden;

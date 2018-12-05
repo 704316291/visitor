@@ -1,5 +1,12 @@
+
+.HomeBox {
+    width: 1366px;
+    margin: auto;
+}
+
 /*轮播图*/
 .ant-carousel .slick-slide {
+    margin-top: 80px;
     text-align: center;
     height: 100px;
     line-height: 100px;
@@ -32,14 +39,12 @@
 
 .indexPhoto dt {
     width: 50%;
-    height: 310px;
     border-right: 3px solid #ffffff;
 
 }
 
 .indexPhoto dd {
     width: 25%;
-    height: 157px;
     border-right: 3px solid #ffffff;
     border-bottom: 3px solid #ffffff;
 }
@@ -64,22 +69,25 @@
 
 /*新闻标题*/
 .indexPhoto-title {
-    /*display: none;*/
+    display: none;
     position: absolute;
     width: 100%;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .7);
+    background-color: rgba(0, 0, 0, .5);
     color: #fff;
     text-align: center;
     height: 42px;
     line-height: 42px;
     font-size: 18px;
-    font-weight: 200;
 }
 
-/*.indexPhoto dt:hover .indexPhoto-title, .indexPhoto dd:hover .indexPhoto-title {
+.anticon {
+    vertical-align: 0.29em !important;
+}
+
+.indexPhoto dt:hover .indexPhoto-title, .indexPhoto dd:hover .indexPhoto-title {
     display: block;
-}*/
+}
 
 /*按钮*/
 .btn::after {
@@ -91,6 +99,7 @@
 .btn-hollow {
     color: #0094E6;
     border: 1px solid #0094E6;
+
 }
 
 .btn-hollow-gray {
@@ -130,22 +139,60 @@
 
 /* Acitivites */
 .indexDiv {
-    width: 100%;
-    padding: 55px 0;
     overflow: hidden;
-    margin: 0;
+ /* margin: 100px 0;*/
 }
 
 .center {
-    width: 1050px;
     margin: 0 auto;
     overflow: hidden;
 }
+.indexUs {
+    width: 50%;
+    float: left;
+    display: block;
+    padding-right: 90px;
+}
+.indexDade{
+    width: 50%;
+    float: left;
+    display: block;
+}
+
+.indexUs h4 {
+    font-size: 36px;
+    position: relative;
+    padding-bottom: 30px;
+    font-weight: 200;
+}
+
+.indexUs h4::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 50px;
+    background-color: #0094E6;
+}
+
+.indexUs p {
+    margin: 20px 0 30px;
+    font-size: 14px;
+    line-height: 2em;
+    color: #666;
+}
+
+.indexUs a {
+    width: 130px;
+    display: block;
+    margin-top: 39px;
+}
+
 
 /* 标题 */
 
 .titleH4 {
-    width: 100%;
     text-align: center;
     position: relative;
     padding-bottom: 30px;
@@ -166,17 +213,14 @@
 .titleH4 h4 {
     font-size: 36px;
     margin-bottom: 28px;
-    font-weight: 200;
 }
 
 .titleH4 p {
     font-size: 18px;
     line-height: 1.6em;
-    font-weight: 100;
     width: 90%;
     margin: 0 auto;
     overflow: hidden;
-    color: #999;
 
 }
 
@@ -198,7 +242,6 @@
 
 /*Acitivites*/
 .indexAcitivites {
-    width: 100%;
     display: block;
     margin: 0;
     overflow: hidden;
@@ -239,7 +282,6 @@
 }
 
 .indexAcitivites-more {
-    /*  margin-top: 60px;*/
     text-align: center;
     width: 120px;
     margin: 60px auto 0;
@@ -345,7 +387,6 @@
     width: 127px;
     height: 30px;
     float: left;
-    font-family: 'Arial Negreta', 'Arial';
     font-weight: 700;
     font-style: normal;
     color: #000;
@@ -356,19 +397,17 @@
 }
 
 .WdateDiv .dpTitle .datetimeP {
-    width: 404px;
-    height: 90px;
-    text-align: center;
-    /* padding-left: 85px; */
-    margin: auto;
+    width: 450px;
+    height: 68px;
+    margin: 10px auto;
 }
 
 .Today {
     display: inline-block;
     width: 70px;
     height: 59px;
+    line-height: 59px;
     font-size: 48px;
-    font-family: SourceHanSansCN-Bold;
     font-weight: bold;
     color: #000;
     padding-right: 12px;
@@ -376,25 +415,38 @@
 }
 
 .next-month-btn-day {
+    text-align: left;
     display: inline-block;
-    width: 100px;
-    height: 40px;
+    width: 121px;
+    height: 77px;
+    margin-top: 6px;
 }
 
 .Month {
     display: inline-block;
-    width: 100px;
+    width: 131px;
     height: 20px;
+    font-size: 19px;
 
 }
+.ChinaBeijing{
+    display: inline-block;
+    width: 148px;
+    height: 20px;
+    font-size: 19px;
+}
 
-.ChinaBeijing {
-
+.indexUs p {
+    width:438px;
+    height:176px;
+    font-size:14px;
+    font-family:SourceHanSansCN-Light;
+    font-weight:300;
+    color:rgba(102,102,102,1);
+    line-height:32px;
 }
 
 .WdateDiv .dpTitle .datetimeP span {
-    font-family: 'Arial Negreta', 'Arial';
-    font-weight: 700;
     font-style: normal;
     color: #000;
     letter-spacing: 1px;
@@ -402,12 +454,12 @@
 
 .WdateDiv .dpTitle .dBTop {
     width: 500px;
-    height: 40px;
+    height: 69px;
     padding-top: 4px;
 }
 
 .WdateDiv .dBTitle {
-    width: 450px;
+    width:550px;
     height: 40px;
     padding-top: 17px;
     border: 1px solid rgba(241, 241, 241, 1);
@@ -420,15 +472,16 @@
 .WdateDiv .dBTitle li {
     display: inline-block;
     color: #000;
-    font-size: 14px;
-    width: 56px;
+    font-size: 19px;
+    width: 75px;
     height: 19px;
 
 }
 
+
 .dpBody {
-    width: 450px;
-    height: 270px;
+    width: 550px;
+    height: 370px;
     background: inherit;
     background-color: rgba(255, 255, 255, 1);
     -webkit-box-sizing: border-box;
@@ -439,55 +492,54 @@
 }
 
 .dpBody ul {
-    width: 400px;
-    height: 220px;
+    width: 546px;
+    height: 318px;
     margin: 0 auto;
 }
 
 .dpBody ul li {
-    width: 31px;
-    height: 30px;
-    margin: 6px 13px;
-    line-height: 30px;
+    width: 46px;
+    height: 46px;
+    line-height: 46px;
+    margin: 9px 16px;
+    /* line-height: 30px; */
     border: 1px solid #FFF;
     background: #ffffff;
     display: inline-block;
     text-align: center;
     -webkit-user-select: none;
+    font-size: 19px;
 
 }
 
 .dpRound {
-    width: 450px;
+    width: 550px;
     height: 49px;
     line-height: 35px
 }
 
 /*文字*/
 .Overdue, .Expire {
-    width: 207px;
+    width: 274px;
     height: 35px;
     display: inline-block;
     line-height: 48px;
     text-align: center;
     font-size: 14px;
-    color: rgba(153, 153, 153, 1)
 }
 
 /*小图标*/
 .Overdue .yellowBox, .Expire .blueBox {
     display: inline-block;
 
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     margin-right: 10px;
     font-size: 14px;
-    font-family: SourceHanSansCN-Light;
     font-weight: 300;
     color: rgba(153, 153, 153, 1)
 }
-
 
 .Overdue .yellowBox {
     background: #52c41a;
@@ -503,11 +555,11 @@
     background: #ffffff !important;
     border-radius: 50%;
 }
-.darkgSelected:hover{
+
+.darkgSelected:hover {
     background: #87e8de !important;
     color: #f8f8f8;
 }
-
 
 /*当天之前的样式*/
 .darkgUnSelected {
@@ -529,7 +581,7 @@
 }
 
 /*当天的样式*/
-.dayColor{
+.dayColor {
     color: #fff !important;
     background: #69c0ff !important;
     border-radius: 50%;

@@ -10,24 +10,27 @@ import {connect} from "react-redux";
 
     render() {
         return <div className="footer">
-            <ul className="center">
-                <li><i className="img-1"> </i></li>
-                <li><i className="iconfont  icon-youjian"/>
-                    <FormattedMessage
-                        id="intl-Menu-Email"
-                    />
-                  ：cbc@lenovo.com</li>
-                <li><i className="iconfont  icon-dianhua"/>
-                    <FormattedMessage
-                        id="intl-Menu-Phone"
-                    />
-                    ：010-62983755</li>
-                <li><i className="iconfont  icon-biao"/>
-                    <FormattedMessage
-                        id="intl-Menu-Hours"
-                    />
-                    ：8:30 am - 6 pm</li>
-            </ul>
+            <div className="footerBox">
+              <i className="img-1"></i>
+                <ul className="center">
+                    <li><i className="iconfont  icon-youjian"/>
+                        <FormattedMessage
+                            id="intl-Menu-Email"
+                        />
+                        ：cbc@lenovo.com</li>
+                    <li><i className="iconfont  icon-dianhua"/>
+                        <FormattedMessage
+                            id="intl-Menu-Phone"
+                        />
+                        ：010-62983755</li>
+                    <li><i className="iconfont  icon-biao"/>
+                        <FormattedMessage
+                            id="intl-Menu-Hours"
+                        />
+                        ：8:30 am - 6 pm</li>
+                </ul>
+            </div>
+
         </div>
     }
 }

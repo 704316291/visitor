@@ -100,62 +100,35 @@ class AboutUs extends React.Component {
                 {/*FAQ页面*/}
                 <div className="aboutDiv" onClick={this.GetFAQList}>
                     <div className="aboutLeft">
-                        <Tabs tabPosition="left" style={{textAlign: "left"}} className="app-user">
+                        <Tabs tabPosition="left" style={{textAlign: "left",}} className="app-user">
                             {/*公司介绍*/}
                             <TabPane tab={
                                 <FormattedMessage
                                     id="intl-AboutUS-Introduction"
                                 />} key="1">
-                                <div style={{width: "806px", height: "229px"}}>
+                                <div  className="phoneIntroduce" style={{  width: "806px", height: "229px"}}>
                                     <img src={img1} alt="" style={{width: "100%", height: "100%", marginLeft: "39px"}}/>
                                 </div>
-                                <div style={{
-                                    textAlign: "left",
-                                    fontSize: "14px",
-                                    width: "794px",
-                                    height: "650px",
-                                    marginTop: "48px",
-                                    marginLeft: "39px",
-                                    marginRight: "57px"
-
-                                }}>
-                                    <p style={{
-                                        textIndent: "1.5em",
-                                        paddingBottom: "30px",
-                                        lineHeight: "32px",
-                                        color: "#666666",
-                                    }}><FormattedMessage
+                                <div  className="textIntroduce">
+                                    <p><FormattedMessage
                                         id="intl-AboutUS-Paragraph1 "
                                     /></p>
 
-                                    <p style={{
-                                        textIndent: "2em",
-                                        paddingBottom: "30px",
-                                        lineHeight: "32px",
-                                        color: "#666666",
-                                        fontFamily: "Microsoft YaHei"
-                                    }}><FormattedMessage
+                                    <p><FormattedMessage
                                         id="intl-AboutUS-Paragraph2"
                                     /></p>
 
-                                    <p style={{
-                                        textIndent: "2em",
-                                        paddingBottom: "30px",
-                                        lineHeight: "32px",
-                                        color: "#666666"
-                                    }}>
+                                    <p>
                                         <FormattedMessage
                                             id="intl-AboutUS-Paragraph3"
                                         /></p>
-
-                                    <p style={{
-                                        textIndent: "2em",
-                                        paddingBottom: "30px",
-                                        lineHeight: "32px",
-                                        color: "#666666"
-                                    }}>
+                                    <p>
                                         <FormattedMessage
                                             id="intl-AboutUS-Paragraph4"
+                                        /></p>
+                                    <p>
+                                        <FormattedMessage
+                                            id="intl-AboutUS-Paragraph5"
                                         /></p>
                                 </div>
                             </TabPane>
@@ -262,6 +235,66 @@ class AboutUs extends React.Component {
                                             <FormattedMessage
                                                 id="intl-AboutUS-VisitorsGuide3"
                                             /></li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide4"
+                                            />
+                                            <p style={{textIndent:"1rem",marginTop:"10px"}}>
+                                                <FormattedMessage
+                                                    id="intl-AboutUS-VisitorsGuide4-1"
+                                                />
+                                            </p>
+                                            <p style={{textIndent:"1rem",marginTop:"10px"}}>
+                                                <FormattedMessage
+                                                    id="intl-AboutUS-VisitorsGuide4-2"
+                                                />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide5"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide6"
+                                            />
+                                            <p style={{textIndent:"1rem",marginTop:"10px"}}>
+                                                <FormattedMessage
+                                                    id="intl-AboutUS-VisitorsGuide6-1"
+                                                />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide7"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide8"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide9"
+                                            />
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide10"
+                                            />
+                                            <p style={{textIndent:"1rem",marginTop:"10px"}}>
+                                                <FormattedMessage
+                                                    id="intl-AboutUS-VisitorsGuide10-1"
+                                                />
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <FormattedMessage
+                                                id="intl-AboutUS-VisitorsGuide11"
+                                            />
+                                        </li>
                                     </ul>
                                 </div>
                             </TabPane>
@@ -270,38 +303,30 @@ class AboutUs extends React.Component {
                                 <FormattedMessage
                                     id="intl-AboutUS-Facilities"
                                 />} key="3">
-                                <div className="aboutRight aboutUs" style={{width: "890px", overflow: "hidden"}}>
-                                    <div  style={{
-                                        width: "813px",
-                                        height: "216px",
-                                        marginBottom: "38px",
-                                        borderBottom: "1px  dashed #ccc"
-                                    }}>
+                                <div className="aboutRight aboutUs" style={{width: "872px", overflow: "hidden"}}>
+                                    <div   className="ThePicture">
                                         <div style={{
                                             float: "left",
                                             width: "326px",
                                             height: "183px",
-                                            marginRight: "38px"
                                         }}>
                                             <img src={img1} alt="" style={{width: "100%", height: "100%"}}/>
                                         </div>
                                         <div style={{
+                                            width:"439px",
                                             textAlign: "left",
                                             float: "right",
-                                            width: "400px",
-                                            height: "183px"
                                         }}>
-                                            <h3 style={{marginBottom: "29px"}}>
+                                            <h3 style={{marginBottom: "29px",color:"#0094E6"}}>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities1"
                                                 />
                                             </h3>
-
-                                            <p style={{fontSize: "14px", wordBreak: "break-all",
-                                                wordWrap: "break-word"}}>
+                                            <p style={{ fontSize: "14px",wordBreak:"break-all",whiteSpace:"normal"}}>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities2"
-                                                /></p>
+                                                />
+                                            </p>
                                             <p>
                                                 <FormattedMessage
                                                     id="intl-AboutUS- Facilities3"
@@ -310,21 +335,17 @@ class AboutUs extends React.Component {
                                             </p>
                                         </div>
                                     </div>
-                                    <div style={{
-                                        width: "813px",
-                                        height: "216px",
-                                        marginBottom: "38px",
-                                        borderBottom: "1px  dashed #ccc"
-                                    }}>
+                                    {/*第二个图*/}
+                                    <div className="ThePicture">
                                         <div style={{
                                             textAlign: "left",
                                             float: "left",
-                                            width: "400px",
+                                            width: "439px",
                                             height: "183px"
                                         }}>
-                                            <h3 style={{marginBottom: "29px"}}>
+                                            <h3 style={{marginBottom: "29px",color:"#0094E6"}}>
                                                 <FormattedMessage
-                                                    id="intl-AboutUS- Facilities1"
+                                                    id="intl-AboutUS- Facilities1-1"
                                                 /></h3>
                                             <p style={{fontSize: "14px"}}>
                                                 <FormattedMessage
@@ -345,7 +366,8 @@ class AboutUs extends React.Component {
                                         </div>
 
                                     </div>
-                                    <div style={{width: "813px", height: "183px", marginBottom: "38px"}}>
+                                    {/*第三个图*/}
+                                    <div className="ThePicture">
                                         <div style={{
                                             float: "left",
                                             width: "326px",
@@ -361,9 +383,9 @@ class AboutUs extends React.Component {
                                             width: "400px",
                                             height: "183px"
                                         }}>
-                                            <h3 style={{marginBottom: "29px"}}>
+                                            <h3 style={{marginBottom: "29px",color:"#0094E6"}}>
                                                 <FormattedMessage
-                                                    id="intl-AboutUS- Facilities1"
+                                                    id="intl-AboutUS- Facilities1-2"
                                                 />
                                             </h3>
                                             <p style={{fontSize: "14px"}}>

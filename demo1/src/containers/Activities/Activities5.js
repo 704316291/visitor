@@ -31,8 +31,6 @@ class Activities5 extends React.Component {
         // this.props.Activities3.value.dataSource.forEach((item,index)=>{
         //             delete item.key
         // })
-        console.log(this.props.Activities3.value.dataSource);
-
         e.preventDefault();
         const obj = {
             "Requestor":"",//申请人
@@ -55,19 +53,21 @@ class Activities5 extends React.Component {
             "Occupation": this.props.Activities3.value.OccupationObj.Value,
             "GroupApplyOrderItemCollection": this.props.Activities3.value.dataSource
         };
-        console.log(obj)
         Sumbit(obj).then((response) => {
             let data=JSON.parse( response.DataResult);
-            {this.props.local === "en" ? data.msgEN : data.msgCN}
-             });
+            {this.props.local === "en" ? message.warning(data.msgEN,2) : message.warning(data.msgCN,2)}
+        }).then(()=>{
+            setTimeout(()=>{
+                window.scrollTo(300, 0);
+                this.props.history.push("/Home");
+            },2000)
+
+        })
     }
 
 
     render() {
-       const{VisitTime11}= this.props.Activities1.value.VisitTime
-        console.log(this.props.Activities3.value.OccupationObj);
-        console.log(this.props.Activities1.value.VisitPurpose);
-        console.log(this.props.Activities3.value.dataSource);
+      let VisitTime11= this.props.Activities1.value.VisitTime;
         const formItemLayout = {
             labelCol: {
                 xs: {span: 14},

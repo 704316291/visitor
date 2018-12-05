@@ -7,7 +7,6 @@ import {GetVisitTime} from "../../api/api"
 import {GetLMSMainIndustry} from "../../api/api"
 import {connect} from "react-redux"
 import actions from "../../store/actions"
-
 const FormItem = Form.Item;
 const Option = Select.Option;
 class RegistrationForm extends React.Component {
@@ -51,7 +50,6 @@ class RegistrationForm extends React.Component {
     };
     componentWillMount() {
         /*临时存储数据*/
-        console.log(this.props.value);
         let history = this.props.value;
         let cleanValue =this.props.cleanValue;
         if( cleanValue.cleanVis === true){
@@ -65,6 +63,7 @@ class RegistrationForm extends React.Component {
                     VisitPurposeObj:value.VisitPurposeObj
                 })
             }
+
             if (history !== undefined) {
                 this.setState({
                     historyDate: {
@@ -118,6 +117,7 @@ class RegistrationForm extends React.Component {
         const {getFieldDecorator} = this.props.form;
         const {historyDate} = this.state;
         const dateFormat = this.props.location.name;
+        console.log(dateFormat);
         const formItemLayout = {
             labelCol: {
                 xs: {span: 24},

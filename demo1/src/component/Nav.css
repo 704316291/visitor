@@ -1,20 +1,30 @@
 
-.navDiv {
+.navDiv{
     width: 100%;
-    z-index: 999;
     height: 83px;
-    background: #FFFFFF;
-    box-shadow: 0 2px 8px 0 rgba(194, 194, 194, 0.26);
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background:rgba(255,255,255,1);
+    box-shadow:0 2px 8px 0 rgba(194,194,194,0.26);
 }
+.navDivBox{
+    width:1366px;
+    height:83px;
+    margin: auto;
+    position: relative;
+}
+
 
 /*联想图标*/
 .navDiv .navLogo {
-    margin: 30px 0 30px 60px;
+    margin: 30px 0 31px 60px;
     width: 164px;
-    height: 27px;
+    height: 22px;
     display: inline-block;
     background: url("../static/images/logoX.png") no-repeat;
-    background-size: 100%;
+    background-size: contain;
 }
 
 .navLogoX {
@@ -28,7 +38,7 @@
 
 .navDiv-fixed {
     background-color: rgba(255, 255, 255, .95);
-    color: #333;
+    color: #fff;
     box-shadow: 0 1px 15px rgba(0, 0, 0, .1);
 }
 
@@ -44,14 +54,13 @@
     float: right;
     display: block;
     padding-top: 32px;
-    margin-right: 50px;
+    margin-right: 80px;
 }
 
 .nav-ul li {
-
     float: left;
     display: block;
-    border-left: 1px solid #333;
+    border-left: 1px solid #ddd;
     line-height: 1em;
     padding: 0 20px;
     position: relative;
@@ -60,9 +69,9 @@
 .nav-login li {
     float: left;
     display: block;
-    border-left: 1px solid #333;
+    border-left: 1px solid #ddd;
     line-height: 1em;
-    padding: 0 20px;
+    padding: 0 22px;
     position: relative;
 }
 
@@ -83,7 +92,7 @@
     display:  inline-block;
     position: absolute;
     top: 28px;
-    right: 32px;
+    right: 60px;
     cursor:pointer;
 }
 
@@ -132,7 +141,7 @@
 }
 
 .nav-login li {
-    padding: 0 10px;
+    padding: 0 20px;
 }
 
 .navDiv-fixed .nav-login li a {
@@ -145,38 +154,3 @@
     top: -4px;
 }
 
-.indexUs, .indexDade {
-    width: 50%;
-    float: left;
-    display: block;
-    padding-right: 90px;
-}
-
-.indexUs h4 {
-    font-size: 36px;
-    position: relative;
-    padding-bottom: 30px;
-    font-weight: 200;
-}
-
-.indexUs h4::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 1px;
-    width: 50px;
-    background-color: #0094E6;
-}
-
-.indexUs p {
-    margin: 20px 0 30px;
-    font-size: 14px;
-    line-height: 2em;
-    color: #666;
-}
-
-.indexUs a {
-    width: 130px;
-    display: block;
-}

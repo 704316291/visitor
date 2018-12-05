@@ -30,13 +30,13 @@ class Home extends React.Component {
     //获取当天的日期  日历
     //year  年  month 月
     getTime(year, month) {
-        // let  year=new Date().getFullYear(),
-        //  month=month+1;
         //根据当前的年  月  算出日历
         let ary = this.getCalendar(year, month);
         ary = this.getWeek(year, month, ary);
+        console.log(ary);
         return ary
     }
+
 
 //year 年份  month月份
     //算出特定年份  月份的日历排列
@@ -44,6 +44,7 @@ class Home extends React.Component {
         let ary = [];
         let BigMonth = [1, 3, 5, 7, 8, 10, 12];
         //先判断是否为闰年
+
         //闰年 2月
         if (year % 4 === 0) {
             if (month === 2) {
@@ -116,9 +117,9 @@ class Home extends React.Component {
         } else {
             let length = 35 - ary.length;
             for (let i = 1; i < length + 1; i++) {
-                month = month + 1
+                month = month + 1;
                 if (month === 13) {
-                    year = year + 1
+                    year = year + 1;
                     month = 1
                 }
                 ary.push({year, month, day: i})
@@ -186,31 +187,28 @@ class Home extends React.Component {
             year = year - 1;
             month = 12
         }
-        console.log(year, month);
         this.setState({
             year,
             month
         })
-    }
-
-    /*点击当前时间，进行跳转到团队申请页面*/
-    getDay = (item) => {
-        console.log(1);
-        console.log(item);
-        let time =item.year+"-"+item.month+"-"+item.day;
-
-        console.log(time);
-        window.scrollTo(300, 150);
-        this.props.history.push({pathname:"/Activities1",name:time});
     };
-
     //判断是否需要加类名
     isClassName = (year, month, day) => {
         let name = null;
         name = this.isVaildTime(year, month, day);//判断是否在此区间
         //  name=this.isWeeked(year, month, day)//判断是否为周末
         return name
-    }
+    };
+    //判断是否在区间范围内
+    isVaildTime = (year, month, day) => {
+        let time = new Date(`${year}/${month}/${day}`);
+        let start = new Date(this.state.timeInterval.startDate);
+        let end = new Date(this.state.timeInterval.endDate);
+        if (time - start > 0 && time - end < 0) {
+            return this.isWeeked(year, month, day)
+        }
+        return "darkgUnSelected"
+    };
 
     //判断是否是周末
     isWeeked = (year, month, day) => {
@@ -219,19 +217,7 @@ class Home extends React.Component {
             return "darkgUnSelected"
         }
         return this.isBeforeToday(year, month, day)
-    }
-
-    //判断是否在区间范围内
-    isVaildTime = (year, month, day) => {
-        let time = new Date(`${year}/${month}/${day}`)
-        let start = new Date(this.state.timeInterval.startDate)
-        let end = new Date(this.state.timeInterval.endDate)
-        if (time - start > 0 && time - end < 0) {
-            return this.isWeeked(year, month, day)
-        }
-        return "darkgUnSelected"
-    }
-
+    };
 
     //当天之前全部不可选
     isBeforeToday = (year, month, day) => {
@@ -240,8 +226,7 @@ class Home extends React.Component {
             return this.isUnSelected(year, month, day)
         }
         return "darkgUnSelected"
-    }
-
+    };
     //当天的后三天不能点击  排出 六  日
     isUnSelected = (year, month, day) => {
         let today = new Date().toLocaleDateString();// 当天的日期
@@ -268,20 +253,26 @@ class Home extends React.Component {
         }
         return this.isSelectFull(year, month, day)
 
-    }
+    };
 
     //根据得到的后台数据 来确定哪些是申请已满
-
     isSelectFull = (year, month, day) => {
         let curTime = `${year}-${month}-${day}`;
-
         if (this.state.fullTime.includes(curTime)) {
             return "darkgFull"
         }
         return "darkgSelected"
-    }
+    };
     /*点击图片，进入详情页*/
 
+
+
+    /*点击当前时间，进行跳转到团队申请页面*/
+    getDay = (item) => {
+        let time =item.year+"-"+item.month+"-"+item.day;
+        window.scrollTo(300, 150);
+        this.props.history.push({pathname:"/Activities1",name:time});
+    };
     handleBack1 = (ID) => {
         this.props.history.push("/NearTerm", {ID});
     };
@@ -303,6 +294,7 @@ class Home extends React.Component {
         console.log(day);
         let value={cleanVis:true};
         this.props.Clean(value);
+
         this.setState({
             year,
             month,
@@ -338,9 +330,9 @@ class Home extends React.Component {
 
     render() {
         const aryDate = this.getTime(this.state.year, this.state.month);
-        return (<div>
+        return (<div className="HomeBox">
             {/*轮播图片*/}
-            <div style={{width:"100%"}}>
+            <div style={{width:"100%",height:"100%"}}>
                 <Carousel autoplay>
                     {
                         this.state.GetHomeBanner.map((item) => {
@@ -375,7 +367,7 @@ class Home extends React.Component {
                     <div className="indexDade">
                         <div className="zAccountInner zAccount2 clearfix">
                             <div className="zAccountPlanL span5 no-margin-left">
-                                <div className="WdateDiv" style={{width: "450px"}}>
+                                <div className="WdateDiv" style={{width: "550px"}}>
                                     <div className="dpTitle">
                                         <div className="datetimeP">
                                             <Icon type="left"
@@ -438,6 +430,7 @@ class Home extends React.Component {
                                             /></li>
                                     </ul>
                                     <div className="dpBody">
+
                                         <ul>
                                             {aryDate.map((item, index) => {
                                                 return (

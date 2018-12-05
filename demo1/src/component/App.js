@@ -32,18 +32,29 @@ import {withRouter} from 'react-router-dom' ;
 addLocaleData([...en, ...zh]);
 
 
+/*let router = [
+    {
+        path: "/Home",
+        component: Home
+    },
+    {
+        path: "/Register",
+        component: Register
+    },
+]*/
 
- class App extends Component {
-     chooseLocale=()=> {
-         switch(this.props.local) {
-             case 'en':
-                 return enUS;
-             case 'zh':
-                 return zhCN;
-             default:
-                 return enUS;
-     }
-     };
+
+class App extends Component {
+    chooseLocale = () => {
+        switch (this.props.local) {
+            case 'en':
+                return enUS;
+            case 'zh':
+                return zhCN;
+            default:
+                return enUS;
+        }
+    };
 
     render() {
         return <IntlProvider locale={this.props.local} messages={this.chooseLocale()}>
@@ -51,6 +62,7 @@ addLocaleData([...en, ...zh]);
                 <div className="Header">
                     <Nav/>
                 </div>
+
                 <div className="Content">
                     <Switch>
                         <Route path='/Home' exact component={Home}/>
@@ -67,7 +79,15 @@ addLocaleData([...en, ...zh]);
                         <Route path='/Login' exact component={Login}/>
                         <Route path='/Register' exact component={Register}/>
                         <Redirect to='/Home'/>
+                  {/*      {router.map((item, index) => {
+                            //权限验证  根据当前权限  只能渲染首页
+                            if (item.path !== "/Home") return
+                            //如果权限不够  转到404
+                            return<div>
+                                <Route key={index} path={item.path} component={item.component}/>
+                            </div>
 
+                        })}*/}
                     </Switch>
                 </div>
                 <div className="Footer">

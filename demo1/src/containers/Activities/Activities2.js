@@ -3,9 +3,7 @@ import {Form, Input, Button, message} from 'antd';
 import {FormattedMessage} from 'react-intl';
 import actions from "../../store/actions"
 import {connect} from 'react-redux';
-
 const FormItem = Form.Item;
-
 class RegistrationForm extends React.Component {
     state = {
         totalPeople: 0,
@@ -18,7 +16,6 @@ class RegistrationForm extends React.Component {
             cleanVis:false,
         }
         this.props.Clean(info);
-
         this.props.history.push("/Activities1");
     };
     /*四个input框*/
@@ -132,9 +129,7 @@ class RegistrationForm extends React.Component {
                 label={<FormattedMessage
                     id="intl-Activities2-Under"
                 />}
-                help={<FormattedMessage
-                    id="intl-Activities2-Elementary"
-                />}
+
             >
                 {getFieldDecorator("UnderTwelve", {
                     initialValue: historyDate && historyDate.UnderTwelve,

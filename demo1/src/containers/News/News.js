@@ -55,7 +55,7 @@ export default class News extends React.Component {
 
     render() {
       let NumberOfPages = this.state.NumberOfPages;
-        let NumberOfPages1 = parseInt(NumberOfPages);
+        let NumberOfPages1 =eval(NumberOfPages);
         return (<div className="insideDiv">
                 <div className="center">
                     <div className="titleH4">

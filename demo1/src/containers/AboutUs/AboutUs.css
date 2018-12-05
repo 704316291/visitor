@@ -20,8 +20,8 @@
 }
 
 .aboutTitle {
-    margin-top: 60px;
-    margin-bottom: 10px;
+    margin-top: 40px;
+    margin-bottom: 6px;
 }
 
 .titleH4 {
@@ -48,13 +48,23 @@
 
 .aboutLeft {
     margin-top: 40px;
-    padding-right: 30px;
 
 }
 
-.aboutUs {
+.ThePicture {
+    width: 819px;
+    height: 216px;
+    margin: 0 auto 38px auto;
+    border-bottom: 1px dashed #ccc;
+}
+
+.ThePicture:nth-last-child(1) {
+    border-bottom: none
+}
+
+/*.aboutUs {
     padding-left: 80px;
-}
+}*/
 
 .aboutUs h4 {
     color: #0094E6;
@@ -109,10 +119,31 @@
     display: block;
     margin-bottom: 10px;
 }
-.ant-tabs-nav .ant-tabs-tab {
-    padding: 12px 35px!important ;
-    margin: 0!important;
+
+.textIntroduce {
+
+    text-align: left;
+    font-size: 14px;
+    width: 794px;
+    height: 650px;
+    margin-top: 48px;
+    margin-left: 39px;
+    margin-right: 32px;
 }
+
+.textIntroduce p {
+    text-indent: 1.5em;
+    margin-bottom: 15px;
+    line-height: 32px;
+    color: #666666;
+    fontFamily: "Microsoft YaHei"
+}
+
+.ant-tabs-nav .ant-tabs-tab {
+    padding: 12px 35px !important;
+    margin: 0 !important;
+}
+
 .ant-tabs-nav .ant-tabs-tab-active {
     color: #fff;
     font-weight: 500;
@@ -121,7 +152,7 @@
 }
 
 .aboutRight {
-    padding-left: 70px;
+    padding-left: 53px;
     color: #666;
     padding-right: 20px;
     min-height: 700px;
@@ -235,8 +266,6 @@
 
 }
 
-
-
 .icon-gantanhao:before {
 
     content: "\e600";
@@ -253,22 +282,26 @@
     padding: 16px 2px !important;
 
 }
-/*
-.ant-tabs-nav .ant-tabs-tab:hover {
-  color: #f8f8f8;
-}
 
-.ant-tabs-tab-active ant-tabs-tab span:hover{
-    color: #FFFf;
-}*/
-.border-Bottom{
+.border-Bottom {
     width: 813px;
     height: 216px;
     margin-bottom: 38px;
-    border-bottom: 1px  dashed #ccc
+    border-bottom: 1px dashed #ccc
 }
+
 .ant-tabs-nav .ant-tabs-tab {
-    padding: 12px 29px!important;
-    margin: 0!important;
+    padding: 12px 29px !important;
+    margin: 0 !important;
+
+}
+
+/*antd文字样式*/
+
+/*.aboutDiv .aboutLeft :global(.ant-tabs-nav .ant-tabs-tab:hover) {
+color: #000;
+}*/
+
+.ant-tabs-nav .ant-tabs-tab-active {
 
 }

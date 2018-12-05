@@ -37,38 +37,63 @@ const zh_CN = {
 
     "intl-AboutUS-ABOUTSUS ":"企业简介",
     "intl-AboutUS-happened ":"是发生什么事了?",
-    "intl-AboutUS-Paragraph1 ":"联想经过 30\n" +
-    "                                        多年的发展，从一家中国公司成长为一家全球化跨国企业，业务从单一业务转化为多元化业务，同时从全球 PC\n" +
-    "                                        产业引领者逐步演变为以“设备+云”和“基础设施+云”的产业构建者，以广泛的智能设备制造、服务能力和超级计算力构建能力，为全球提供广泛的智能化设备、服务和人\n" +
+    "intl-AboutUS-Paragraph1 ":"联想经过 30" +
+    "                                        多年的发展，从一家中国公司成长为一家全球化跨国企业，业务从单一业务转化为多元化业务，同时从全球 PC" +
+    "                                        产业引领者逐步演变为以“设备+云”和“基础设施+云”的产业构建者，以广泛的智能设备制造、服务能力和超级计算力构建能力，为全球提供广泛的智能化设备、服务和人" +
     "                                        工智能时代的核心计算力，成为人工智能时代的赋能者。",
 
     "intl-AboutUS-Paragraph2":"联想创新展示中心通过> 联想创新展示中心通过“智能生活”场景对联想产品及科技的运用，集中展示未来智能家居、智能工作、智能出行及智能娱乐等方面的内容，并通过基于物联网和人工智能算法平台，形成对整体智能生活方面的技术支撑。",
 
-    "intl-AboutUS-Paragraph3":"在智能行业展示中，通过构建计算力、大数据和算法平台的内容，体现智能制造、智能医疗、智能教育、智能金融以及智慧城市、智能能源等各行业的系统解决方案及各行业的技术突破点，系统性地展示在智能行业的发展中，联想所赋能者的地位和技术领先性",  "intl-AboutUS-Paragraph4":"在智能行业展示中，通过构建计算力、大数据和算法平台的内容，体现智能制造、智能医疗、智能教育、智能金融以及智慧城市、智能能源等各行业的系统解决方案及各行业的技术突破点，系统性地展示在智能行业的发展中，联想所赋能者的地位和技术领先性","intl-AboutUS-operationGuide":"联想VLEC操作指南",
+    "intl-AboutUS-Paragraph3":"在智能行业展示中，通过构建计算力、大数据和算法平台的内容，体现智能制造、智能医疗、智能教育、智能金融以及智慧城市、智能能源等各行业的系统解决方案及各行业的技术突破点，系统性地展示在智能行业的发展中，联想所赋能者的地位和技术领先性",
+    "intl-AboutUS-Paragraph4":"在智能行业展示中，通过构建计算力、大数据和算法平台的内容，体现智能制造、智能医疗、智能教育、智能金融以及智慧城市、智能能源等各行业的系统解决方案及各行业的技术突破点，系统性地展示在智能行业的发展中，联想所赋能者的地位和技术领先性",
+    "intl-AboutUS-Paragraph5":"联想创新展示中心能帮您“联接世界的想象”，带领您进入联想的智能未来世界。",
+    "intl-AboutUS-operationGuide":"联想VLEC操作指南",
     "intl-AboutUS-Introduction":"公司介绍",
     "intl-AboutUS-Admissions":"参观时间",
     "intl-AboutUS-Facilities":"存包处",
     "intl-AboutUS-FAQ":" 常见问题",
     "intl-AboutUS-Directions":" 导航路线",
-    "intl-AboutUS-Hours":"时间",
-    "intl-AboutUS-TheTimeThat":"- 周一 -周五: 10a.m. - 6p.m. (可预订)",
+    "intl-AboutUS-Hours":"开馆时间",
+    "intl-AboutUS-TheTimeThat":"- 周一 -周五: 10a.m. - 6p.m. (需要提前预约)",
     "intl-AboutUS-TheTimeThat1":"- 周六: 9a.m. - 5p.m. (最后一次入场时间为下午4:30 )",
-    "intl-AboutUS-Closed":"关闭",
+    "intl-AboutUS-Closed":"闭馆时间",
     "intl-AboutUS-ClosedTime":"-星期日、国定假日、其他公众假期及最后一天 '每年(12/31)',",
     "intl-AboutUS-ClosedTime1":"- ※ 其他公共假日以五一劳动节(儿童节)为限'5月5日和其他假期.'",
-    "intl-AboutUS-Museum":"移动博物馆导游",
+    "intl-AboutUS-Museum":"场馆指南",
     "intl-AboutUS-Weekdays":"-工作日",
-    "intl-AboutUS-Weekdays1":"需要预约(由博物馆主持参观)",
+    "intl-AboutUS-Weekdays1":"需要提前预约(由场馆工作人员引导参观)",
     "intl-AboutUS-Weekdays2":"所有工作日的访客必须提前预订。",
-    "intl-AboutUS-Weekdays3":"导游团每组最多可容纳20人。(如果您的团队人数超过20人，则会被分成最多20人的小组。)",
+    "intl-AboutUS-Weekdays3":"导游团每组最多可容纳30人。(如果您的团队人数超过30人，则会被分成最多30人的小组。)",
     "intl-AboutUS-Saturdays":"- 每逢星期六",
     "intl-AboutUS-Saturdays1":"-不需要预订 ",
     "intl-AboutUS-Saturdays2":" ※星期六没有导游陪同",
-    "intl-AboutUS-VisitorsGuide":"  游客指南",
-    "intl-AboutUS-VisitorsGuide1":" --整个博物馆禁止吸烟。",
-    "intl-AboutUS-VisitorsGuide2":"  - 受酒精影响的访客不得入内。",
-    "intl-AboutUS-VisitorsGuide3":"  -允许拍照。然而，拍摄是被禁止的.",
+    "intl-AboutUS-VisitorsGuide":"  参观手册",
+    "intl-AboutUS-VisitorsGuide1":" •  -场馆内禁止吸烟。",
+    "intl-AboutUS-VisitorsGuide2":" •  - 酗酒者不得入内。",
+    "intl-AboutUS-VisitorsGuide3":" •  -场馆内允许照相，不得录像.",
+    "intl-AboutUS-VisitorsGuide4":" •  -出于展项安全的考虑，仅在指定区域允许照相.",
+    "intl-AboutUS-VisitorsGuide4-1":"※  禁止录像, 闪光灯摄影,三脚架, 商业用途拍摄",
+    "intl-AboutUS-VisitorsGuide4-2":"※  电视节目拍摄需提前与相关工作人员沟通.",
+    "intl-AboutUS-VisitorsGuide5":" •  - 13岁以下儿童需有成人陪同入场.(一位成人可以陪同 2名儿童)",
+    "intl-AboutUS-VisitorsGuide6":" •  - 学生团队参观需要有监护人陪同.",
+    "intl-AboutUS-VisitorsGuide6-1":"  ※ 30人团队参观须有一名监护人陪同",
+    "intl-AboutUS-VisitorsGuide7":" •  -宠物不得入内",
+    "intl-AboutUS-VisitorsGuide8":" •  -场馆内扰乱参观者将会被请出场外",
+    "intl-AboutUS-VisitorsGuide9":" •  -禁止携带威胁他人安全的物品",
+    "intl-AboutUS-VisitorsGuide10":" •  -建议适当着装",
+    "intl-AboutUS-VisitorsGuide10-1":" ※ 请勿穿人字拖.",
+    "intl-AboutUS-VisitorsGuide11":" •  -禁止在博物馆内使用自行车、滑板、直排轮溜冰鞋和轮式鞋",
+
+
+
+
+
+
+
+
     "intl-AboutUS- Facilities1":" 存包处",
+   "intl-AboutUS- Facilities1-1":"休息区",
+   "intl-AboutUS- Facilities1-2":"联想DESIGN STORE",
     "intl-AboutUS- Facilities2":"这是一名精英，他是一名精英，他是一名精英.",
     "intl-AboutUS- Facilities3":"这是一种很好的方法。这是一种很好的方法。",
     "intl-AboutUS-site":"地址：",
@@ -106,7 +131,6 @@ const zh_CN = {
     "intl-Activities2-Eighteen":"13岁至18岁",
     "intl-Activities2-Students":"大学生",
     "intl-Activities2-Adults":"成人",
-    "intl-Activities2-Elementary":"小学生和幼儿必须由成人陪同。(每2名儿童需要1名成人。)",
     "intl-Activities2-Total number of visitors ":"总参观人数 ",
     "intl-Activities2-People":"人",
     "intl-Activities3-details":"请提供参观详细信息",

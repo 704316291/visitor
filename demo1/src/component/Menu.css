@@ -1,37 +1,46 @@
+
+
 .footer {
-  color: #ffffff;
-  padding: 95px 0 110px 0;
-  display: block;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  background: url(../../src/static/images/footer.png) no-repeat center;
+  height: 235px;
 }
-.center {
-  width: 1102px;
+.footerBox {
+  width: 1366px;
+  height: 235px;
   margin: 0 auto;
-  overflow: hidden;
 }
 /*t图标*/
-.footer .img-1{
+.footerBox .img-1{
   float: left;
-  width: 115px;
-  height: 30px;
+  width: 140px;
+  height: 28px;
+  margin: 94px 0 113px 272px;
   display: inline-block;
   background: url(".././static/images/footer-logo.png") no-repeat;
-  background-size: 100%;
+  background-size: contain;
 }
 
-.footer ul {
-  width: 90%;
-  display: block;
-  margin: 0 auto;
+
+.footer .center {
+  margin:100px 203px 101px 84px ;
+  display: inline-block;
+  width: 642px;
+  height: 21px;
+
 }
 
 .footer ul li {
+  margin-right: 27px;
   display: inline-block;
-  margin-left: 76px;
-  color:rgba(123,123,123,1);
-  font-size:14px;
-  font-family:SourceHanSansCN-Light;
-  font-weight:300;
-  line-height:32px;
+  color: rgba(123,123,123,1);
+  font-size: 14px;
+  font-family: SourceHanSansCN-Light;
+
 }
 
 /*小图标*/
@@ -39,7 +48,7 @@
   padding-right: 8px;
   font-size: 17px;
   position: relative;
-  top: 2px;
+  top: 0;
 }
 
 @font-face {

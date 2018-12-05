@@ -25,7 +25,8 @@ class RegistrationForm extends React.Component {
             OrganizationName: "",
             TitlePosition: "",
             VisitorsNum: "",
-        }]
+        }],
+        phonePattern:/^\d+$/
     }
 
     /*上一步按钮*/
@@ -224,7 +225,6 @@ class RegistrationForm extends React.Component {
                     return (
                         getFieldDecorator(`Nationality${record.key}`, {
                             initialValue: Nationality,
-                            rules: [{required: true, message: 'Please input your text!', whitespace: true}],
                         })(
                             <input  onBlur={(e) => addInfo(e, 'Nationality', `${record.key}`)}/>
                         )
@@ -240,7 +240,6 @@ class RegistrationForm extends React.Component {
                     return (
                         getFieldDecorator(`OrganizationName${record.key}`, {
                             initialValue: NameOfOrganization,
-                            rules: [{required: true, message: 'Please input your text!', whitespace: true}],
                         })(
                             <input onBlur={(e) => addInfo(e, 'OrganizationName', `${record.key}`)}/>
                         )
@@ -255,7 +254,6 @@ class RegistrationForm extends React.Component {
                     return (
                         getFieldDecorator(`TitlePosition${record.key}`, {
                             initialValue: TitlePosition,
-                            rules: [{required: true, message: 'Please input your text!', whitespace: true}],
                         })(
                             <input onBlur={(e) => addInfo(e, 'TitlePosition', `${record.key}`)}/>
                         )
@@ -270,7 +268,6 @@ class RegistrationForm extends React.Component {
                     return (
                         getFieldDecorator(`VisitorsNum${record.key}`, {
                             initialValue: VisitorsNum,
-                            rules: [{required: true, message: 'Please input your text!', whitespace: true}],
                         })(
                             <input onBlur={(e) => addInfo(e, 'VisitorsNum', `${record.key}`)}/>
                         )
@@ -427,6 +424,43 @@ class RegistrationForm extends React.Component {
                         <Input style={{width: "300px"}}/>
                     )}
                 </FormItem>
+                {/*国籍*/}
+                <FormItem
+                    {...formItemLayout}
+                    label={<FormattedMessage
+                        id="intl-Activities3-Nationality"
+                    />}
+                    help=""
+                >
+                    {getFieldDecorator('Nationality', {
+                        initialValue: historyDate && historyDate.Nationality,
+                        rules: [{
+                            required: true, message: 'Please confirm your password!',
+                        }],
+                    })(
+                        <Select
+                            showSearch
+                            style={{width: 300}}
+                            onChange={(value)=>{
+                                if(value==="China"){
+                                    this.setState({
+                                        phonePattern:/^\d{11}$/
+                                    })
+                                }else{
+                                    this.setState({
+                                        phonePattern:/^\d+$/
+                                    })
+                                }
+                            }}
+                        >
+                            {conuntry.data.map((item) => {
+                                return <Option  key={item.Id}  value={item.title}>
+                                    {item.title}
+                                </Option>
+                            })}
+                        </Select>,
+                    )}
+                </FormItem>
                 {/*手机*/}
                 <FormItem
                     {...formItemLayout}
@@ -437,9 +471,10 @@ class RegistrationForm extends React.Component {
                 >
                     {getFieldDecorator('MobilePhone', {
                         initialValue: historyDate && historyDate.MobilePhone,
-                        rules: [{required: true, message: 'Please input your phone number!'}],
+                        rules: [{ pattern:this.state.phonePattern,required: true, message: 'Please input your phone number!', }],
+
                     })(
-                        <Input style={{width: '300px'}}/>
+                        <Input style={{width: '300px'}} />
                     )}
                 </FormItem>
                 {/*邮箱*/}
@@ -461,32 +496,6 @@ class RegistrationForm extends React.Component {
                         <Input style={{width: '300px'}}/>
                     )}
                 </FormItem>
-                {/*国籍*/}
-                <FormItem
-                    {...formItemLayout}
-                    label={<FormattedMessage
-                        id="intl-Activities3-Nationality"
-                    />}
-                    help=""
-                >
-                    {getFieldDecorator('Nationality', {
-                        initialValue: historyDate && historyDate.Nationality,
-                        rules: [{
-                            required: true, message: 'Please confirm your password!',
-                        }],
-                    })(
-                        <Select
-                            showSearch
-                            style={{width: 300}}
-                        >
-                            {conuntry.data.map((item) => {
-                                return <Option  key={item.Id}  value={item.title}>
-                                    {item.title}
-                                </Option>
-                            })}
-                        </Select>,
-                    )}
-                </FormItem>
                 {/*职业*/}
                 <FormItem
                     {...formItemLayout}
@@ -498,7 +507,7 @@ class RegistrationForm extends React.Component {
                     {getFieldDecorator('Occupation', {
                         initialValue: historyDate.Occupation && historyDate.Occupation,
                         rules: [{
-                            required: true, message: 'Please confirm your Occupation!',
+                            required: false, message: 'Please confirm your Occupation!',
                         }],
                     })(
                         <Select
